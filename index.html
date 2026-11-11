@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study with Devid</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,sans-serif;
+  background:#081225;
+  color:white;
+}
+header{
+  background:#101d38;
+  padding:25px 15px;
+  text-align:center;
+  border-bottom:1px solid #29436c;
+}
+header h1{color:#55aaff;font-size:29px}
+header p{margin-top:10px;color:#cbd5e1}
+nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:15px;
+  background:#101d38;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:8px;
+}
+nav a:hover{background:#245b9b}
+.hero{
+  text-align:center;
+  padding:55px 15px;
+  background:linear-gradient(135deg,#102c55,#071020);
+}
+.hero h2{font-size:30px;color:#61b5ff}
+.hero p{margin:15px 0;color:#d4dbea}
+button{
+  background:#1675dc;
+  color:white;
+  border:0;
+  padding:12px 20px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px;
+}
+section{padding:30px 15px}
+.section-title{
+  text-align:center;
+  color:#61b5ff;
+  margin-bottom:22px;
+}
+.classes,.subjects,.resources{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+  max-width:1000px;
+  margin:auto;
+}
+.card{
+  background:#14233e;
+  border:1px solid #29466f;
+  padding:23px 12px;
+  border-radius:13px;
+  text-align:center;
+}
+.card h3{margin-bottom:12px}
+.card button{width:100%;margin-top:10px}
+.card p{color:#bdcbe0;font-size:13px}
+#studyArea{
+  display:none;
+  max-width:1000px;
+  margin:auto;
+}
+#studyArea h2{text-align:center;margin-bottom:20px}
+.search{
+  display:block;
+  width:100%;
+  max-width:500px;
+  margin:0 auto 25px;
+  padding:14px;
+  border-radius:8px;
+  border:1px solid #47648b;
+  background:#14233e;
+  color:white;
+  font-size:16px;
+}
+.resource{
+  background:#14233e;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid #29466f;
+}
+.resource h3{margin-bottom:10px;color:#64b5ff}
+.resource p{color:#cbd5e1;font-size:14px}
+.resource a{
+  display:inline-block;
+  margin-top:14px;
+  background:#1675dc;
+  padding:10px 14px;
+  color:white;
+  text-decoration:none;
+  border-radius:7px;
+}
+.back{margin:20px auto;display:block}
+footer{
+  text-align:center;
+  padding:30px 15px;
+  background:#101d38;
+  color:#cbd5e1;
+  margin-top:35px;
+}
+footer a{color:#61b5ff}
+#message{text-align:center;color:#ffcf70;margin:15px}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📚 Study with Devid</h1>
+  <p>Your Free CBSE Learning Platform</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#classes">Classes</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+  <h2>Welcome to Study with Devid</h2>
+  <p>Learn Better • Study Smarter • Achieve More</p>
+  <p>Free Study Materials for CBSE Class 9th to 12th</p>
+  <button onclick="document.getElementById('classes').scrollIntoView()">
+    Start Learning
+  </button>
+</div>
+
+<section id="classes">
+  <h2 class="section-title">Choose Your Class</h2>
+
+  <div class="classes">
+    <div class="card">
+      <h3>Class 9th</h3>
+      <p>CBSE Study Materials</p>
+      <button onclick="openClass(9)">Explore</button>
+    </div>
+
+    <div class="card">
+      <h3>Class 10th</h3>
+      <p>CBSE Study Materials</p>
+      <button onclick="openClass(10)">Explore</button>
+    </div>
+
+    <div class="card">
+      <h3>Class 11th</h3>
+      <p>CBSE Study Materials</p>
+      <button onclick="openClass(11)">Explore</button>
+    </div>
+
+    <div class="card">
+      <h3>Class 12th</h3>
+      <p>CBSE Study Materials</p>
+      <button onclick="openClass(12)">Explore</button>
+    </div>
+  </div>
+</section>
+
+<section id="studyArea">
+  <h2 id="classTitle"></h2>
+  <button class="back" onclick="closeClass()">← Back to Classes</button>
+
+  <input class="search" id="search"
+  placeholder="Search subject..."
+  oninput="filterSubjects()">
+
+  <div class="subjects" id="subjectList"></div>
+  <div id="message"></div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About Study with Devid</h2>
+  <div class="card">
+    <h3>Our Mission</h3>
+    <p>To provide free and quality educational resources
+    for every CBSE student from Class 9 to 12.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <div class="card">
+    <h3>Study with Devid</h3>
+    <p>Instagram: Indian_boy_872681</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Study with Devid</p>
+  <p>Made for Students ❤️</p>
+</footer>
+
+<script>
+const subjects = [
+"Mathematics",
+"Science",
+"English",
+"Hindi",
+"Social Science",
+"Physics",
+"Chemistry",
+"Biology",
+"Accountancy",
+"Business Studies",
+"Economics",
+"Computer Science"
+];
+
+let currentClass = 9;
+
+function openClass(n){
+  currentClass = n;
+  document.getElementById("studyArea").style.display="block";
+  document.getElementById("classTitle").innerText="Class "+n+" CBSE";
+  document.getElementById("search").value="";
+  showSubjects(subjects);
+  document.getElementById("studyArea").scrollIntoView();
+}
+
+function showSubjects(list){
+  const area=document.getElementById("subjectList");
+  area.innerHTML="";
+
+  list.forEach(subject=>{
+    const card=document.createElement("div");
+    card.className="card";
+
+    const title=document.createElement("h3");
+    title.textContent=subject;
+
+    const btn=document.createElement("button");
+    btn.textContent="Open Subject";
+    btn.onclick=()=>openSubject(subject);
+
+    card.appendChild(title);
+    card.appendChild(btn);
+    area.appendChild(card);
+  });
+}
+
+function filterSubjects(){
+  const q=document.getElementById("search").value.toLowerCase();
+  showSubjects(subjects.filter(s=>s.toLowerCase().includes(q)));
+}
+
+function openSubject(subject){
+  const area=document.getElementById("subjectList");
+  area.innerHTML=`
+    <div class="resource">
+      <h3>${subject} - Class ${currentClass}</h3>
+      <p>Study resources for this subject.</p>
+      <p>Chapter-wise notes and lectures will be added by Admin.</p>
+      <a href="https://ncert.nic.in/textbook.php" target="_blank">
+        NCERT Books
+      </a>
+      <a href="https://www.youtube.com/results?search_query=CBSE+Class+${currentClass}+${encodeURIComponent(subject)}+chapter+revision" target="_blank">
+        Short Video Lectures
+      </a>
+    </div>
+  `;
+  document.getElementById("message").innerText=
+  "Chapter-wise notes are coming soon!";
+}
+
+function closeClass(){
+  document.getElementById("studyArea").style.display="none";
+  document.getElementById("classes").scrollIntoView();
+}
+</script>
+
+</body>
+  </html>
+  
