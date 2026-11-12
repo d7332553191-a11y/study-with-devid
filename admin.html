@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study with Devid - Admin</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#172033}
+header{background:#172b55;color:white;padding:20px}
+header h2{margin:0}
+main{max-width:850px;margin:20px auto;padding:15px}
+.card{background:white;padding:18px;border-radius:12px;margin:15px 0;box-shadow:0 2px 10px #0001}
+input,select,button{width:100%;padding:12px;margin:7px 0;border:1px solid #ccd3df;border-radius:7px;font-size:15px}
+button{background:#1765d1;color:white;border:0;font-weight:bold}
+button.secondary{background:#52627a}
+button.danger{background:#c93636}
+.item{padding:12px;border-bottom:1px solid #ddd;overflow-wrap:anywhere}
+.item button{width:auto;margin:5px;padding:8px 12px}
+.hidden{display:none}
+small{color:#65738a}
+</style>
+</head>
+<body>
+<header>
+<h2>Study with Devid</h2>
+<p>Admin Dashboard</p>
+</header>
+<main>
+
+<div class="card" id="loginBox">
+<h3>Admin Login</h3>
+<input id="email" type="email" placeholder="Admin Email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<p id="loginMsg"></p>
+</div>
+
+<div id="dashboard" class="hidden">
+
+<div class="card">
+<h3>Welcome, Admin</h3>
+<button class="secondary" onclick="logout()">Logout</button>
+</div>
+
+<div class="card">
+<h3>Manage Classes</h3>
+<input id="classNumber" type="number" placeholder="Class number (9, 10, 11...)">
+<input id="classTitle" placeholder="Class title">
+<button onclick="addClass()">Add Class</button>
+<div id="classList"></div>
+</div>
+
+<div class="card">
+<h3>Manage Subjects</h3>
+<select id="subjectClass"></select>
+<input id="subjectName" placeholder="Subject name">
+<input id="subjectStream" placeholder="Stream (optional: PCM, PCB, Commerce...)">
+<button onclick="addSubject()">Add Subject</button>
+<div id="subjectList"></div>
+</div>
+
+<div class="card">
+<h3>Manage Chapters</h3>
+<select id="chapterSubject"></select>
+<input id="chapterTitle" placeholder="Chapter name">
+<button onclick="addChapter()">Add Chapter</button>
+<div id="chapterList"></div>
+</div>
+
+<div class="card">
+<h3>Upload Notes / Photos / Videos</h3>
+<select id="uploadChapter"></select>
+<input id="materialTitle" placeholder="Content title">
+<input id="materialDescription" placeholder="Description (optional)">
+<input id="fileInput" type="file" accept="image/*,video/*,application/pdf">
+<label><input id="published" type="checkbox" checked style="width:auto"> Publish this content</label>
+<button onclick="uploadMaterial()">Upload Content</button>
+<p id="uploadMsg"></p>
+<div id="materialList"></div>
+</div>
+
+</div>
+</main>
+
+<script>
+const SUPABASE_URL = "sb_publishable_KeP4Z3eAn";
+const SUPABASE_KEY = "sb_publishable_KeP4Z3eAn-TXEsTbbctrxg_UqDgUVNy";
+
+const db = window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+let currentUser = null;
+
+async function login(){
+ const email=document.getElementById("email").value.trim();
+ const password=document.getElementById("password").value;
+ const msg=document.getElementById("loginMsg");
+ msg.textContent="Checking login...";
+ const {data,error}=await db.auth.signInWithPassword({email,password});
+ if(error){msg.textContent=error.message;return;}
+ currentUser=data.user;
+ await checkAdmin();
+}
+
+async function checkAdmin(){
+ const {data,error}=await db.from("admin_users")
+ .select("user_id").eq("user_id",currentUser.id).maybeSingle();
+
+ if(error || !data){
+  await db.auth.signOut();
+  document.getElementById("loginMsg").textContent="Admin access denied.";
+  return;
+ }
+ document.getElementById("loginBox").classList.add("hidden");
+ document.getElementById("dashboard").classList.remove("hidden");
+ await refreshAll();
+}
+
+async function logout(){
+ await db.auth.signOut();
+ location.reload();
+}
+
+async function refreshAll(){
+ await loadClasses();
+ await loadSubjects();
+ await loadChapters();
+ await loadMaterials();
+}
+
+async function loadClasses(){
+ const {data,error}=await db.from("classes").select("*").order("class_number");
+ if(error){alert(error.message);return;}
+ document.getElementById("classList").innerHTML=data.map(x=>`
+ <div class="item">Class ${x.class_number} - ${safe(x.title)}
+ <button onclick="editClass(${x.id},'${safeJS(x.title)}')">Edit</button>
+ <button class="danger" onclick="deleteClass(${x.id})">Delete</button></div>`).join("");
+
+ document.getElementById("subjectClass").innerHTML=
+ data.map(x=>`<option value="${x.id}">Class ${x.class_number}</option>`).join("");
+}
+
+async function addClass(){
+ const n=Number(document.getElementById("classNumber").value);
+ const title=document.getElementById("classTitle").value.trim();
+ if(!n||!title){alert("Enter class number and title");return;}
+ const {error}=await db.from("classes").insert({class_number:n,title});
+ if(error)alert(error.message);
+ else{document.getElementById("classNumber").value="";
+ document.getElementById("classTitle").value="";await loadClasses();}
+}
+
+async function editClass(id,old){
+ const title=prompt("New class title:",old);
+ if(!title)return;
+ const {error}=await db.from("classes").update({title}).eq("id",id);
+ if(error)alert(error.message);else await loadClasses();
+}
+
+async function deleteClass(id){
+ if(!confirm("Delete this class and its subjects, chapters and materials?"))return;
+ const {error}=await db.from("classes").delete().eq("id",id);
+ if(error)alert(error.message);else await refreshAll();
+}
+
+async function loadSubjects(){
+ const {data,error}=await db.from("subjects")
+ .select("*,classes(class_number)").order("sort_order");
+ if(error){alert(error.message);return;}
+ document.getElementById("subjectList").innerHTML=data.map(x=>`
+ <div class="item">Class ${x.classes?.class_number||""} - ${safe(x.name)}
+ ${x.stream?"("+safe(x.stream)+")":""}
+ <button onclick="editSubject(${x.id},'${safeJS(x.name)}')">Edit</button>
+ <button class="danger" onclick="deleteSubject(${x.id})">Delete</button></div>`).join("");
+
+ document.getElementById("chapterSubject").innerHTML=
+ data.map(x=>`<option value="${x.id}">${safe(x.name)} - Class ${x.classes?.class_number||""}</option>`).join("");
+}
+
+async function addSubject(){
+ const class_id=Number(document.getElementById("subjectClass").value);
+ const name=document.getElementById("subjectName").value.trim();
+ const stream=document.getElementById("subjectStream").value.trim();
+ if(!class_id||!name){alert("Select class and enter subject");return;}
+ const {error}=await db.from("subjects").insert({class_id,name,stream:stream||null});
+ if(error)alert(error.message);
+ else{document.getElementById("subjectName").value="";
+ document.getElementById("subjectStream").value="";await refreshAll();}
+}
+
+async function editSubject(id,old){
+ const name=prompt("New subject name:",old);
+ if(!name)return;
+ const {error}=await db.from("subjects").update({name}).eq("id",id);
+ if(error)alert(error.message);else await refreshAll();
+}
+
+async function deleteSubject(id){
+ if(!confirm("Delete this subject and its chapters?"))return;
+ const {error}=await db.from("subjects").delete().eq("id",id);
+ if(error)alert(error.message);else await refreshAll();
+}
+
+async function loadChapters(){
+ const {data,error}=await db.from("chapters")
+ .select("*,subjects(name)").order("sort_order");
+ if(error){alert(error.message);return;}
+ document.getElementById("chapterList").innerHTML=data.map(x=>`
+ <div class="item">${safe(x.subjects?.name||"")} - ${safe(x.title)}
+ <button onclick="editChapter(${x.id},'${safeJS(x.title)}')">Edit</button>
+ <button class="danger" onclick="deleteChapter(${x.id})">Delete</button></div>`).join("");
+
+ document.getElementById("uploadChapter").innerHTML=
+ data.map(x=>`<option value="${x.id}">${safe(x.subjects?.name||"")} - ${safe(x.title)}</option>`).join("");
+}
+
+async function addChapter(){
+ const subject_id=Number(document.getElementById("chapterSubject").value);
+ const title=document.getElementById("chapterTitle").value.trim();
+ if(!subject_id||!title){alert("Select subject and enter chapter");return;}
+ const {error}=await db.from("chapters").insert({subject_id,title});
+ if(error)alert(error.message);
+ else{document.getElementById("chapterTitle").value="";await refreshAll();}
+}
+
+async function editChapter(id,old){
+ const title=prompt("New chapter name:",old);
+ if(!title)return;
+ const {error}=await db.from("chapters").update({title}).eq("id",id);
+ if(error)alert(error.message);else await refreshAll();
+}
+
+async function deleteChapter(id){
+ if(!confirm("Delete this chapter and its materials?"))return;
+ const {error}=await db.from("chapters").delete().eq("id",id);
+ if(error)alert(error.message);else await refreshAll();
+}
+
+async function uploadMaterial(){
+ const chapter_id=Number(document.getElementById("uploadChapter").value);
+ const file=document.getElementById("fileInput").files[0];
+ const title=document.getElementById("materialTitle").value.trim();
+ const msg=document.getElementById("uploadMsg");
+ if(!chapter_id||!file||!title){alert("Select chapter, file and title");return;}
+
+ msg.textContent="Uploading...";
+ const cleanName=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
+ const path=Date.now()+"_"+cleanName;
+
+ const {error:uploadError}=await db.storage.from("study-content")
+ .upload(path,file,{upsert:false});
+
+ if(uploadError){msg.textContent=uploadError.message;return;}
+
+ const type=file.type.startsWith("image/")?"photo":
+ file.type.startsWith("video/")?"video":"pdf";
+
+ const {error}=await db.from("materials").insert({
+ chapter_id,title,
+ description:document.getElementById("materialDescription").value.trim(),
+ material_type:type,
+ file_path:path,
+ is_published:document.getElementById("published").checked
+ });
+
+ if(error){
+  await db.storage.from("study-content").remove([path]);
+  msg.textContent=error.message;return;
+ }
+
+ msg.textContent="Upload successful!";
+ document.getElementById("fileInput").value="";
+ document.getElementById("materialTitle").value="";
+ document.getElementById("materialDescription").value="";
+ await loadMaterials();
+}
+
+async function loadMaterials(){
+ const {data,error}=await db.from("materials").select("*,chapters(title)")
+ .order("created_at",{ascending:false});
+ if(error){alert(error.message);return;}
+
+ document.getElementById("materialList").innerHTML=data.map(x=>`
+ <div class="item">${safe(x.title)} (${safe(x.material_type)})
+ - ${safe(x.chapters?.title||"")}
+ ${x.is_published?"Published":"Unpublished"}
+ <button onclick="editMaterial(${x.id},'${safeJS(x.title)}')">Edit</button>
+ <button class="danger" onclick="deleteMaterial(${x.id},'${safeJS(x.file_path||"")}')">Delete</button>
+ </div>`).join("");
+}
+
+async function editMaterial(id,old){
+ const title=prompt("New content title:",old);
+ if(!title)return;
+ const {error}=await db.from("materials").update({title}).eq("id",id);
+ if(error)alert(error.message);else await loadMaterials();
+}
+
+async function deleteMaterial(id,path){
+ if(!confirm("Delete this content?"))return;
+ const {error}=await db.from("materials").delete().eq("id",id);
+ if(error){alert(error.message);return;}
+ if(path)await db.storage.from("study-content").remove([path]);
+ await loadMaterials();
+}
+
+function safe(s){
+ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function safeJS(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/\n/g," ");}
+
+db.auth.getSession().then(async({data})=>{
+ if(data.session){
+  currentUser=data.session.user;
+  await checkAdmin();
+ }
+});
+</script>
+</body>
+  </html>
+  
