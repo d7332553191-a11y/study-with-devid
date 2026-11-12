@@ -98,6 +98,7 @@ async function login(){
  const msg=document.getElementById("loginMsg");
  msg.textContent="Checking login...";
  const {data,error}=await db.auth.signInWithPassword({email,password});
+ console.log("Login response received", error);
  if(error){msg.textContent=error.message;return;}
  currentUser=data.user;
  await checkAdmin();
