@@ -4,327 +4,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
-<title>Study with Devid | Free CBSE Learning Platform</title>
-<meta name="description" content="Study with Devid - Free educational resources, notes, PDFs and video lectures for Classes 9 to 12.">
+<title>Study with Devid | Free Education</title>
+<meta name="description" content="Study with Devid - Free educational resources for CBSE students from Class 9 to 12.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#fff;color:#17243a}
-a{text-decoration:none;color:inherit}
-button{cursor:pointer;font-family:inherit}
-header{height:75px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:white;box-shadow:0 2px 14px #10294b12;position:sticky;top:0;z-index:100}
-.logo{font-size:23px;font-weight:800;color:#1456b8}
-.logo span{color:#17243a}
-nav{display:flex;align-items:center;gap:24px}
-nav a{font-size:14px;font-weight:600;color:#33445e}
-nav a:hover{color:#1764cf}
-.login{background:#1764cf;color:white;padding:12px 19px;border:0;border-radius:8px;font-weight:bold}
-.menu{display:none;background:none;border:0;font-size:26px;color:#1456b8}
-.hero{padding:65px 6%;background:linear-gradient(120deg,#f3f8ff,#fff 65%);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
-.tag{display:inline-block;background:#e2efff;color:#1764cf;padding:9px 14px;border-radius:30px;font-size:12px;font-weight:bold;margin-bottom:20px}
-.hero h1{font-size:48px;line-height:1.18;color:#152d50;margin-bottom:20px}
-.hero h1 span{color:#1764cf}
-.hero p{font-size:16px;line-height:1.8;color:#62718a;max-width:510px}
-.actions{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}
-.primary,.secondary{padding:14px 22px;border-radius:8px;font-weight:bold;border:0}
-.primary{background:#1764cf;color:white}
-.secondary{background:white;color:#1764cf;border:1px solid #1764cf}
-.hero-image{height:350px;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 15px 40px #174b8b25}
-.hero-image img{width:100%;height:100%;object-fit:cover;transition:opacity .5s}
-.image-label{position:absolute;bottom:0;left:0;right:0;padding:22px;color:white;background:linear-gradient(transparent,#10294be8);font-weight:bold}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;padding:28px 6%;background:white}
-.stat{text-align:center;padding:16px;border:1px solid #e8eef7;border-radius:12px}
-.stat strong{font-size:25px;color:#1764cf;display:block;margin-bottom:6px}
-.stat span{font-size:13px;color:#687890}
-section{padding:65px 6%}
-.section-title{text-align:center;margin-bottom:35px}
-.section-title h2{font-size:31px;color:#17365e;margin-bottom:10px}
-.section-title p{color:#718096;font-size:14px}
-.classes{background:#f7faff}
-.class-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.class-card{background:white;padding:27px 20px;border:1px solid #e6edf7;border-radius:15px;transition:.25s;box-shadow:0 5px 20px #17365e08}
-.class-card:hover{transform:translateY(-6px);box-shadow:0 12px 25px #17365e15}
-.class-icon{height:52px;width:52px;border-radius:12px;background:#eaf2ff;color:#1764cf;display:grid;place-items:center;font-size:24px;margin-bottom:17px}
-.class-card h3{font-size:21px;margin-bottom:9px;color:#17365e}
-.class-card p{font-size:13px;color:#718096;line-height:1.6;margin-bottom:18px}
-.class-card a{color:#1764cf;font-weight:bold;font-size:14px}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.feature{padding:25px;border:1px solid #e8eef7;border-radius:14px}
-.feature .symbol{font-size:29px;margin-bottom:15px}
-.feature h3{font-size:18px;margin-bottom:10px;color:#17365e}
-.feature p{font-size:14px;color:#718096;line-height:1.7}
-.materials{background:#f7faff}
-.search{display:block;width:min(500px,100%);margin:0 auto 30px;padding:15px 18px;border:1px solid #dbe5f2;border-radius:9px;font-size:15px;outline:none}
-.search:focus{border-color:#1764cf}
-.material-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.material{background:white;border:1px solid #e5edf7;padding:23px;border-radius:12px}
-.material h3{font-size:17px;color:#17365e;margin-bottom:10px}
-.material p{font-size:13px;color:#718096;line-height:1.6}
-.material small{display:inline-block;margin-top:15px;color:#1764cf;font-weight:bold}
-.updates{background:#fff}
-.update-list{max-width:750px;margin:auto}
-.update{padding:18px;border-bottom:1px solid #e8eef7;display:flex;gap:15px}
-.update b{color:#1764cf;white-space:nowrap}
-.update p{font-size:14px;color:#52647e;line-height:1.6}
-.cta{margin:20px 6% 65px;padding:45px 25px;background:#1459b7;color:white;text-align:center;border-radius:18px}
-.cta h2{font-size:29px;margin-bottom:12px}
-.cta p{color:#e0edff;line-height:1.7}
-.cta a{display:inline-block;margin-top:20px;background:white;color:#1459b7;padding:13px 22px;border-radius:8px;font-weight:bold}
-footer{background:#112947;color:#d5e3f5;padding:45px 6% 20px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer h3{color:white;margin-bottom:15px}
-footer p,footer a{font-size:13px;line-height:2;color:#c0d0e5}
-footer a{display:block}
-.copyright{text-align:center;border-top:1px solid #ffffff20;padding-top:20px;margin-top:30px;font-size:12px;color:#aebfd6}
-@media(max-width:850px){
- nav{display:none;position:absolute;top:75px;left:0;right:0;background:white;padding:20px 6%;box-shadow:0 10px 15px #0001;flex-direction:column;align-items:flex-start}
- nav.open{display:flex}
+body{font-family:Arial,sans-serif;background:#fff;color:#172b4d;line-height:1.6}
+header{background:white;padding:15px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #00000010;position:sticky;top:0;z-index:10}
+.logo{font-size:21px;font-weight:bold;color:#1765d1}
+nav{display:flex;gap:20px;align-items:center}
+nav a{text-decoration:none;color:#263b59;font-weight:600;font-size:14px}
+nav a:hover{color:#1765d1}
+.menu{display:none;background:#1765d1;color:white;border:0;padding:9px 13px;border-radius:7px}
+.hero{padding:65px 7%;background:linear-gradient(110deg,#eff6ff,#fff);display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.hero h1{font-size:44px;line-height:1.2;margin:15px 0;color:#142c50}
+.hero p{color:#61718a;margin-bottom:22px}
+.tag{color:#1765d1;font-weight:bold;font-size:13px}
+.btn{display:inline-block;background:#1765d1;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;border:0;font-weight:bold;cursor:pointer}
+.btn:hover{background:#104ca5}
+.hero img{width:100%;height:310px;object-fit:cover;border-radius:18px}
+section{padding:55px 7%}
+.section-title{text-align:center;font-size:29px;margin-bottom:10px;color:#142c50}
+.subtitle{text-align:center;color:#718096;margin-bottom:30px}
+.classes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:white;border:1px solid #e5edf8;padding:25px 18px;border-radius:14px;box-shadow:0 5px 20px #15365b0b;text-align:center;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 25px #15365b18}
+.card h3{color:#1765d1;font-size:23px;margin-bottom:8px}
+.card p{color:#718096;font-size:13px;margin-bottom:15px}
+.streams{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.stream{border:1px solid #dce8f7;padding:22px;border-radius:13px;text-align:center}
+.stream h3{color:#1765d1;margin-bottom:7px}
+.common{background:#f2f7ff;border-radius:15px;padding:25px;margin-top:25px}
+.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.subject{background:white;border:1px solid #e0eafa;padding:14px;border-radius:9px;text-align:center;font-weight:600;color:#24466e}
+#details{background:#f8fbff;min-height:180px}
+#details h2{color:#1765d1;margin-bottom:15px}
+.subject-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.subject-item{background:white;padding:17px;border:1px solid #e1eaf6;border-radius:10px;cursor:pointer}
+.subject-item:hover{border-color:#1765d1;color:#1765d1}
+.back{margin-bottom:18px;background:#e8f1ff;color:#1765d1;padding:9px 15px;border:0;border-radius:7px;cursor:pointer}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{padding:22px;border-radius:12px;background:#f4f8ff;text-align:center}
+.feature h3{color:#1765d1;margin:8px}
+footer{background:#142c50;color:white;padding:35px 7%;text-align:center}
+footer a{color:#bcd8ff;text-decoration:none;margin:8px}
+.small{font-size:13px;color:#d1dded;margin-top:12px}
+#details{display:none}
+@media(max-width:750px){
+ header{padding:13px 5%}
+ nav{display:none;position:absolute;top:65px;left:0;width:100%;background:white;padding:20px;flex-direction:column;box-shadow:0 5px 12px #0002}
+ nav.show{display:flex}
  .menu{display:block}
- .hero{grid-template-columns:1fr;padding-top:45px}
- .hero h1{font-size:38px}
- .hero-image{height:270px}
- .class-grid{grid-template-columns:repeat(2,1fr)}
- .features{grid-template-columns:1fr}
- .material-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:520px){
- header{padding:0 5%}
- .logo{font-size:19px}
- .hero{padding:42px 5%}
+ .hero{grid-template-columns:1fr;padding:42px 6%}
  .hero h1{font-size:34px}
- .hero-image{height:230px}
- section{padding:48px 5%}
- .stats{padding:20px 5%;gap:8px}
- .stat{padding:12px 5px}
- .stat strong{font-size:20px}
- .stat span{font-size:11px}
- .class-grid{gap:10px}
- .class-card{padding:18px 13px}
- .class-card h3{font-size:18px}
- .material-grid{grid-template-columns:1fr}
- .footer-grid{grid-template-columns:1fr}
- .cta{margin:10px 5% 45px}
+ .hero img{height:230px}
+ .classes{grid-template-columns:repeat(2,1fr)}
+ .streams{grid-template-columns:1fr}
+ .subjects{grid-template-columns:repeat(2,1fr)}
+ .features{grid-template-columns:1fr}
+ .subject-list{grid-template-columns:1fr}
+ section{padding:40px 6%}
 }
 </style>
 </head>
+
 <body>
 
 <header>
- <a href="#home" class="logo">Study <span>with Devid</span></a>
- <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+ <div class="logo">🎓 Study with Devid</div>
+ <button class="menu" onclick="toggleMenu()">☰</button>
  <nav id="nav">
-  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#" onclick="home();closeMenu()">Home</a>
   <a href="#classes" onclick="closeMenu()">Classes</a>
-  <a href="#materials" onclick="closeMenu()">Study Materials</a>
-  <a href="#features" onclick="closeMenu()">Features</a>
-  <a href="#updates" onclick="closeMenu()">Updates</a>
-  <a href="#about" onclick="closeMenu()">About Us</a>
+  <a href="#features" onclick="closeMenu()">Resources</a>
+  <a href="#about" onclick="closeMenu()">About</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
  </nav>
 </header>
 
-<main>
-<div class="hero" id="home">
+<div id="homepage">
+
+<div class="hero">
  <div>
-  <span class="tag">WELCOME TO STUDY WITH DEVID</span>
-  <h1>Learn Better.<br><span>Grow Smarter.</span></h1>
-  <p>Your learning journey starts here. Explore free study materials, notes and educational resources for Classes 9 to 12.</p>
-  <div class="actions">
-   <a class="primary" href="#classes">Explore Classes →</a>
-   <a class="secondary" href="#materials">Study Materials</a>
-  </div>
+  <span class="tag">YOUR LEARNING JOURNEY STARTS HERE</span>
+  <h1>Learn Today.<br>Lead Tomorrow.</h1>
+  <p>Your learning companion for CBSE Classes 9–12. Explore study materials, notes and educational resources for free.</p>
+  <a href="#classes" class="btn">Explore Classes →</a>
  </div>
- <div class="hero-image">
-  <img id="heroPhoto" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85" alt="Students learning together">
-  <div class="image-label" id="photoCaption">Learn Together, Grow Together</div>
- </div>
+ <img id="heroPhoto"
+ src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000"
+ alt="Students learning">
 </div>
 
-<div class="stats">
- <div class="stat"><strong>9–12</strong><span>School Classes</span></div>
- <div class="stat"><strong>100%</strong><span>Free Access</span></div>
- <div class="stat"><strong>24/7</strong><span>Learning Resources</span></div>
-</div>
+<section id="classes">
+ <h2 class="section-title">Choose Your Class</h2>
+ <p class="subtitle">Select your class to explore subjects and study materials.</p>
 
-<section class="classes" id="classes">
- <div class="section-title">
-  <h2>Choose Your Class</h2>
-  <p>Select your class and explore learning resources.</p>
- </div>
- <div class="class-grid">
-  <div class="class-card">
-   <div class="class-icon">📘</div>
+ <div class="classes">
+  <div class="card">
    <h3>Class 9</h3>
-   <p>Explore subjects, notes and learning resources.</p>
-   <a href="#materials">Explore Class 9 →</a>
+   <p>CBSE Study Materials</p>
+   <button class="btn" onclick="openClass(9)">Explore →</button>
   </div>
-  <div class="class-card">
-   <div class="class-icon">📗</div>
+  <div class="card">
    <h3>Class 10</h3>
-   <p>Prepare with study materials and revision resources.</p>
-   <a href="#materials">Explore Class 10 →</a>
+   <p>CBSE Study Materials</p>
+   <button class="btn" onclick="openClass(10)">Explore →</button>
   </div>
-  <div class="class-card">
-   <div class="class-icon">📙</div>
+  <div class="card">
    <h3>Class 11</h3>
-   <p>Build strong concepts and understand your subjects.</p>
-   <a href="#materials">Explore Class 11 →</a>
+   <p>Choose Your Stream</p>
+   <button class="btn" onclick="openClass(11)">Explore →</button>
   </div>
-  <div class="class-card">
-   <div class="class-icon">📕</div>
+  <div class="card">
    <h3>Class 12</h3>
-   <p>Find study resources for your board preparation.</p>
-   <a href="#materials">Explore Class 12 →</a>
+   <p>Choose Your Stream</p>
+   <button class="btn" onclick="openClass(12)">Explore →</button>
   </div>
  </div>
 </section>
 
-<section id="features">
- <div class="section-title">
-  <h2>Why Study with Devid?</h2>
-  <p>Simple learning resources, accessible to everyone.</p>
- </div>
- <div class="features">
+<section style="background:#f8fbff">
+ <h2 class="section-title">Free Learning Resources</h2>
+ <p class="subtitle">Learn without paying any membership fee.</p>
+ <div class="features" id="features">
   <div class="feature">
-   <div class="symbol">📚</div>
-   <h3>Free Study Materials</h3>
-   <p>Access available notes and PDFs without creating an account.</p>
+   <div style="font-size:32px">📚</div>
+   <h3>Study Notes</h3>
+   <p>Class-wise learning materials.</p>
   </div>
   <div class="feature">
-   <div class="symbol">🎥</div>
-   <h3>Video Learning</h3>
-   <p>Learn concepts through available video lectures.</p>
+   <div style="font-size:32px">📄</div>
+   <h3>PDF Resources</h3>
+   <p>Study PDFs and learning documents.</p>
   </div>
   <div class="feature">
-   <div class="symbol">📱</div>
-   <h3>Learn Anywhere</h3>
-   <p>Use the website on mobile phones, tablets and computers.</p>
-  </div>
- </div>
-</section>
-
-<section class="materials" id="materials">
- <div class="section-title">
-  <h2>Study Materials</h2>
-  <p>Find your learning resources here. More resources will be added.</p>
- </div>
- <input class="search" id="searchBox" type="search" placeholder="Search notes, PDFs and subjects..." oninput="searchMaterials()">
- <div class="material-grid" id="materialGrid">
-  <div class="material" data-search="class 9 notes science maths english hindi social science it ai">
-   <h3>Class 9 – Study Resources</h3>
-   <p>Maths, English, Hindi, Social Science, Science, IT and AI.</p>
-   <small>Resources coming soon</small>
-  </div>
-  <div class="material" data-search="class 10 notes science maths english hindi social science it ai">
-   <h3>Class 10 – Study Resources</h3>
-   <p>Maths, English, Hindi, Social Science, Science, IT and AI.</p>
-   <small>Resources coming soon</small>
-  </div>
-  <div class="material" data-search="class 11 pcm physics chemistry maths">
-   <h3>Class 11 – PCM</h3>
-   <p>Physics, Chemistry and Mathematics resources.</p>
-   <small>Resources coming soon</small>
-  </div>
-  <div class="material" data-search="class 12 pcm physics chemistry maths">
-   <h3>Class 12 – PCM</h3>
-   <p>Physics, Chemistry and Mathematics resources.</p>
-   <small>Resources coming soon</small>
-  </div>
-  <div class="material" data-search="video lectures lessons">
+   <div style="font-size:32px">🎥</div>
    <h3>Video Lectures</h3>
-   <p>Educational videos and lessons will be available here.</p>
-   <small>Coming soon</small>
-  </div>
-  <div class="material" data-search="pdf notes downloads">
-   <h3>PDF Notes</h3>
-   <p>Downloadable study materials will be added here.</p>
-   <small>Coming soon</small>
+   <p>Educational video lessons.</p>
   </div>
  </div>
 </section>
 
-<section class="updates" id="updates">
- <div class="section-title">
-  <h2>Latest Updates</h2>
-  <p>News and announcements from Study with Devid.</p>
- </div>
- <div class="update-list">
-  <div class="update"><b>Update 01</b><p>Welcome to Study with Devid – your learning platform.</p></div>
-  <div class="update"><b>Update 02</b><p>More study materials and educational resources will be added soon.</p></div>
-  <div class="update"><b>Update 03</b><p>Explore the website and choose your class to get started.</p></div>
+<section id="about">
+ <h2 class="section-title">Why Study with Devid?</h2>
+ <p class="subtitle">A simple place for students to learn and grow.</p>
+ <div class="features">
+  <div class="feature"><h3>Free Education</h3><p>Resources available free for students.</p></div>
+  <div class="feature"><h3>Easy Learning</h3><p>Organized class and subject sections.</p></div>
+  <div class="feature"><h3>Student Friendly</h3><p>Easy to use on phones and computers.</p></div>
  </div>
 </section>
 
-<div class="cta">
- <h2>Your Learning Journey Starts Here!</h2>
- <p>Learn at your own pace. Explore free educational resources.</p>
- <a href="#classes">Start Learning Now →</a>
 </div>
-</main>
 
-<footer>
- <div class="footer-grid">
-  <div id="about">
-   <h3>Study with Devid</h3>
-   <p>A free educational learning platform designed to make study resources accessible to students of Classes 9 to 12.</p>
-  </div>
-  <div>
-   <h3>Quick Links</h3>
-   <a href="#home">Home</a>
-   <a href="#classes">Classes</a>
-   <a href="#materials">Study Materials</a>
-   <a href="#updates">Latest Updates</a>
-  </div>
-  <div id="contact">
-   <h3>Contact Us</h3>
-   <p>Instagram</p>
-   <a href="https://www.instagram.com/Indian_boy_872681/" target="_blank" rel="noopener">Indian_boy_872681</a>
-  </div>
- </div>
- <div class="copyright">© 2026 Study with Devid. All rights reserved.</div>
+<section id="details">
+ <button class="back" onclick="home()">← Back to Home</button>
+ <h2 id="detailTitle"></h2>
+ <p id="detailDescription"></p>
+ <div id="subjectList" class="subject-list"></div>
+</section>
+
+<footer id="contact">
+ <h2>Study with Devid</h2>
+ <p>Learn Better. Grow Smarter.</p>
+ <p style="margin-top:12px">
+  <a href="#classes">Classes</a>
+  <a href="#about">About</a>
+  <a href="https://www.instagram.com/Indian_boy_872681/" target="_blank">Instagram</a>
+ </p>
+ <p class="small">© 2026 Study with Devid. All Rights Reserved.</p>
 </footer>
 
 <script>
-function toggleMenu(){
- document.getElementById("nav").classList.toggle("open");
-}
-function closeMenu(){
- document.getElementById("nav").classList.remove("open");
-}
-
-const slides=[
- {
-  src:"https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85",
-  caption:"Learn Together, Grow Together"
- },
- {
-  src:"https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1100&q=85",
-  caption:"A Better Way to Learn"
- },
- {
-  src:"https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1100&q=85",
-  caption:"Build Your Knowledge"
- }
+const basicSubjects = [
+ "Mathematics",
+ "English",
+ "Hindi",
+ "Social Science",
+ "Science",
+ "Information Technology (IT)",
+ "Artificial Intelligence (AI)"
 ];
-let slideIndex=0;
-setInterval(()=>{
- slideIndex=(slideIndex+1)%slides.length;
- const photo=document.getElementById("heroPhoto");
- photo.style.opacity="0";
- setTimeout(()=>{
-  photo.src=slides[slideIndex].src;
-  document.getElementById("photoCaption").textContent=slides[slideIndex].caption;
-  photo.style.opacity="1";
- },400);
-},4500);
 
-function searchMaterials(){
- const query=document.getElementById("searchBox").value.toLowerCase();
- document.querySelectorAll(".material").forEach(item=>{
-  item.style.display=item.dataset.search.includes(query)?"block":"none";
+const sciencePCM = [
+ "Physics",
+ "Chemistry",
+ "Mathematics"
+];
+
+const sciencePCB = [
+ "Physics",
+ "Chemistry",
+ "Biology"
+];
+
+const commerceSubjects = [
+ "Accountancy",
+ "Business Studies",
+ "Economics",
+ "Mathematics / Applied Mathematics",
+ "Entrepreneurship"
+];
+
+const humanitiesSubjects = [
+ "History",
+ "Political Science",
+ "Geography",
+ "Economics",
+ "Sociology",
+ "Psychology"
+];
+
+const commonSeniorSubjects = [
+ "Hindi",
+ "English",
+ "Physical Education",
+ "Computer Science"
+];
+
+function toggleMenu(){
+ document.getElementById("nav").classList.toggle("show");
+}
+
+function closeMenu(){
+ document.getElementById("nav").classList.remove("show");
+}
+
+function openClass(cls){
+ document.getElementById("homepage").style.display="none";
+ const details=document.getElementById("details");
+ details.style.display="block";
+ details.scrollIntoView({behavior:"smooth"});
+
+ document.getElementById("detailTitle").textContent="Class "+cls;
+ const list=document.getElementById("subjectList");
+ list.innerHTML="";
+
+ if(cls===9 || cls===10){
+  document.getElementById("detailDescription").textContent=
+   "Choose a subject to explore study materials.";
+  showSubjects(basicSubjects,cls);
+ }else{
+  document.getElementById("detailDescription").textContent=
+   "Choose your stream or common subjects.";
+  showStreams(cls);
+ }
+}
+
+function showSubjects(subjects,cls){
+ const list=document.getElementById("subjectList");
+ list.innerHTML="";
+ subjects.forEach(subject=>{
+  const div=document.createElement("div");
+  div.className="subject-item";
+  div.textContent=subject+" →";
+  div.onclick=()=>openSubject(cls,subject);
+  list.appendChild(div);
  });
 }
+
+function showStreams(cls){
+ const list=document.getElementById("subjectList");
+ list.innerHTML="";
+
+ const streams=[
+  {name:"Science – PCM",subjects:sciencePCM},
+  {name:"Science – PCB",subjects:sciencePCB},
+  {name:"Commerce",subjects:commerceSubjects},
+  {name:"Humanities",subjects:humanitiesSubjects},
+  {name:"Common Subjects",subjects:commonSeniorSubjects}
+ ];
+
+ streams.forEach(stream=>{
+  const div=document.createElement("div");
+  div.className="subject-item";
+  div.innerHTML="<strong>"+stream.name+"</strong><br><small>View Subjects →</small>";
+  div.onclick=()=>openStreamSubjects(cls,stream);
+  list.appendChild(div);
+ });
+}
+
+function openStreamSubjects(cls,stream){
+ document.getElementById("detailTitle").textContent=
+  "Class "+cls+" – "+stream.name;
+ document.getElementById("detailDescription").textContent=
+  "Select a subject to explore its study materials.";
+ showSubjects(stream.subjects,cls);
+}
+
+function openSubject(cls,subject){
+ document.getElementById("detailTitle").textContent=
+  "Class "+cls+" – "+subject;
+ document.getElementById("detailDescription").textContent=
+  "Study materials for this subject will appear here.";
+ const list=document.getElementById("subjectList");
+ list.innerHTML=
+  '<div class="subject-item">📚 Notes – Coming Soon</div>'+
+  '<div class="subject-item">📄 PDF Resources – Coming Soon</div>'+
+  '<div class="subject-item">🎥 Video Lectures – Coming Soon</div>';
+}
+
+function home(){
+ document.getElementById("homepage").style.display="block";
+ document.getElementById("details").style.display="none";
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+// Educational photo slider
+const photos=[
+ "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000",
+ "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000",
+ "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000",
+ "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1000"
+];
+
+let photoIndex=0;
+setInterval(()=>{
+ photoIndex=(photoIndex+1)%photos.length;
+ document.getElementById("heroPhoto").src=photos[photoIndex];
+},4000);
 </script>
+
 </body>
 </html>
