@@ -4,65 +4,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Study with Devid | Free Education</title>
 <meta name="description" content="Study with Devid - Free educational resources for CBSE students from Class 9 to 12.">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#fff;color:#172b4d;line-height:1.6}
-header{background:white;padding:15px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #00000010;position:sticky;top:0;z-index:10}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#fff;
+  color:#172b4d;
+  line-height:1.6
+}
+
+header{
+  background:white;
+  padding:15px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 12px #00000010;
+  position:sticky;
+  top:0;
+  z-index:10
+}
+
 .logo{font-size:21px;font-weight:bold;color:#1765d1}
+
 nav{display:flex;gap:20px;align-items:center}
-nav a{text-decoration:none;color:#263b59;font-weight:600;font-size:14px}
+
+nav a{
+  text-decoration:none;
+  color:#263b59;
+  font-weight:600;
+  font-size:14px
+}
+
 nav a:hover{color:#1765d1}
-.menu{display:none;background:#1765d1;color:white;border:0;padding:9px 13px;border-radius:7px}
-.hero{padding:65px 7%;background:linear-gradient(110deg,#eff6ff,#fff);display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
-.hero h1{font-size:44px;line-height:1.2;margin:15px 0;color:#142c50}
+
+.menu{
+  display:none;
+  background:#1765d1;
+  color:white;
+  border:0;
+  padding:9px 13px;
+  border-radius:7px
+}
+
+.hero{
+  padding:65px 7%;
+  background:linear-gradient(110deg,#eff6ff,#fff);
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  align-items:center
+}
+
+.hero h1{
+  font-size:44px;
+  line-height:1.2;
+  margin:15px 0;
+  color:#142c50
+}
+
 .hero p{color:#61718a;margin-bottom:22px}
+
 .tag{color:#1765d1;font-weight:bold;font-size:13px}
-.btn{display:inline-block;background:#1765d1;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;border:0;font-weight:bold;cursor:pointer}
+
+.btn{
+  display:inline-block;
+  background:#1765d1;
+  color:white;
+  padding:12px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  border:0;
+  font-weight:bold;
+  cursor:pointer
+}
+
 .btn:hover{background:#104ca5}
-.hero img{width:100%;height:310px;object-fit:cover;border-radius:18px}
+
+.hero img{
+  width:100%;
+  height:310px;
+  object-fit:cover;
+  border-radius:18px
+}
+
 section{padding:55px 7%}
-.section-title{text-align:center;font-size:29px;margin-bottom:10px;color:#142c50}
-.subtitle{text-align:center;color:#718096;margin-bottom:30px}
-.classes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.card{background:white;border:1px solid #e5edf8;padding:25px 18px;border-radius:14px;box-shadow:0 5px 20px #15365b0b;text-align:center;transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 10px 25px #15365b18}
+
+.section-title{
+  text-align:center;
+  font-size:29px;
+  margin-bottom:10px;
+  color:#142c50
+}
+
+.subtitle{
+  text-align:center;
+  color:#718096;
+  margin-bottom:30px
+}
+
+.classes{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px
+}
+
+.card{
+  background:white;
+  border:1px solid #e5edf8;
+  padding:25px 18px;
+  border-radius:14px;
+  box-shadow:0 5px 20px #15365b0b;
+  text-align:center;
+  transition:.2s
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px #15365b18
+}
+
 .card h3{color:#1765d1;font-size:23px;margin-bottom:8px}
+
 .card p{color:#718096;font-size:13px;margin-bottom:15px}
-.streams{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.stream{border:1px solid #dce8f7;padding:22px;border-radius:13px;text-align:center}
-.stream h3{color:#1765d1;margin-bottom:7px}
-.common{background:#f2f7ff;border-radius:15px;padding:25px;margin-top:25px}
-.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
-.subject{background:white;border:1px solid #e0eafa;padding:14px;border-radius:9px;text-align:center;font-weight:600;color:#24466e}
-#details{background:#f8fbff;min-height:180px}
-#details h2{color:#1765d1;margin-bottom:15px}
-.subject-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.subject-item{background:white;padding:17px;border:1px solid #e1eaf6;border-radius:10px;cursor:pointer}
+
+.subject-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px
+}
+
+.subject-item{
+  background:white;
+  padding:17px;
+  border:1px solid #e1eaf6;
+  border-radius:10px;
+  cursor:pointer
+}
+
 .subject-item:hover{border-color:#1765d1;color:#1765d1}
-.back{margin-bottom:18px;background:#e8f1ff;color:#1765d1;padding:9px 15px;border:0;border-radius:7px;cursor:pointer}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.feature{padding:22px;border-radius:12px;background:#f4f8ff;text-align:center}
+
+.back{
+  margin-bottom:18px;
+  background:#e8f1ff;
+  color:#1765d1;
+  padding:9px 15px;
+  border:0;
+  border-radius:7px;
+  cursor:pointer
+}
+
+#details{
+  display:none;
+  background:#f8fbff;
+  min-height:180px
+}
+
+#details h2{color:#1765d1;margin-bottom:15px}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+
+.feature{
+  padding:22px;
+  border-radius:12px;
+  background:#f4f8ff;
+  text-align:center
+}
+
 .feature h3{color:#1765d1;margin:8px}
-footer{background:#142c50;color:white;padding:35px 7%;text-align:center}
-footer a{color:#bcd8ff;text-decoration:none;margin:8px}
+
+footer{
+  background:#142c50;
+  color:white;
+  padding:35px 7%;
+  text-align:center
+}
+
+footer a{
+  color:#bcd8ff;
+  text-decoration:none;
+  margin:8px
+}
+
 .small{font-size:13px;color:#d1dded;margin-top:12px}
-#details{display:none}
+
+.material-card{margin-bottom:14px}
+
+.material-card h3{color:#1765d1}
+
+.material-card p{margin-top:6px;color:#61718a}
+
+.material-card a{
+  color:#1765d1;
+  font-weight:bold;
+  display:inline-block;
+  margin-top:10px
+}
+
+.material-card video{
+  width:100%;
+  max-height:350px;
+  margin-top:12px;
+  border-radius:10px;
+  background:#000
+}
+
+.status-message{
+  color:#61718a;
+  padding:15px;
+  grid-column:1/-1
+}
+
 @media(max-width:750px){
- header{padding:13px 5%}
- nav{display:none;position:absolute;top:65px;left:0;width:100%;background:white;padding:20px;flex-direction:column;box-shadow:0 5px 12px #0002}
- nav.show{display:flex}
- .menu{display:block}
- .hero{grid-template-columns:1fr;padding:42px 6%}
- .hero h1{font-size:34px}
- .hero img{height:230px}
- .classes{grid-template-columns:repeat(2,1fr)}
- .streams{grid-template-columns:1fr}
- .subjects{grid-template-columns:repeat(2,1fr)}
- .features{grid-template-columns:1fr}
- .subject-list{grid-template-columns:1fr}
- section{padding:40px 6%}
+  header{padding:13px 5%}
+
+  nav{
+    display:none;
+    position:absolute;
+    top:65px;
+    left:0;
+    width:100%;
+    background:white;
+    padding:20px;
+    flex-direction:column;
+    box-shadow:0 5px 12px #0002
+  }
+
+  nav.show{display:flex}
+
+  .menu{display:block}
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:42px 6%
+  }
+
+  .hero h1{font-size:34px}
+
+  .hero img{height:230px}
+
+  .classes{grid-template-columns:repeat(2,1fr)}
+
+  .features{grid-template-columns:1fr}
+
+  .subject-list{grid-template-columns:1fr}
+
+  section{padding:40px 6%}
 }
 </style>
 </head>
@@ -70,267 +266,570 @@ footer a{color:#bcd8ff;text-decoration:none;margin:8px}
 <body>
 
 <header>
- <div class="logo">🎓 Study with Devid</div>
- <button class="menu" onclick="toggleMenu()">☰</button>
- <nav id="nav">
-  <a href="#" onclick="home();closeMenu()">Home</a>
-  <a href="#classes" onclick="closeMenu()">Classes</a>
-  <a href="#features" onclick="closeMenu()">Resources</a>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
- </nav>
+  <div class="logo">🎓 Study with Devid</div>
+
+  <button class="menu" onclick="toggleMenu()">☰</button>
+
+  <nav id="nav">
+    <a href="#" onclick="home();closeMenu()">Home</a>
+    <a href="#classes" onclick="closeMenu()">Classes</a>
+    <a href="#features" onclick="closeMenu()">Resources</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </nav>
 </header>
 
 <div id="homepage">
 
-<div class="hero">
- <div>
-  <span class="tag">YOUR LEARNING JOURNEY STARTS HERE</span>
-  <h1>Learn Today.<br>Lead Tomorrow.</h1>
-  <p>Your learning companion for CBSE Classes 9–12. Explore study materials, notes and educational resources for free.</p>
-  <a href="#classes" class="btn">Explore Classes →</a>
- </div>
- <img id="heroPhoto"
- src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000"
- alt="Students learning">
-</div>
+  <div class="hero">
+    <div>
+      <span class="tag">YOUR LEARNING JOURNEY STARTS HERE</span>
+      <h1>Learn Today.<br>Lead Tomorrow.</h1>
+      <p>Your learning companion for CBSE Classes 9–12. Explore study materials, notes and educational resources for free.</p>
+      <a href="#classes" class="btn">Explore Classes →</a>
+    </div>
 
-<section id="classes">
- <h2 class="section-title">Choose Your Class</h2>
- <p class="subtitle">Select your class to explore subjects and study materials.</p>
+    <img
+      id="heroPhoto"
+      src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000"
+      alt="Students learning">
+  </div>
 
- <div class="classes">
-  <div class="card">
-   <h3>Class 9</h3>
-   <p>CBSE Study Materials</p>
-   <button class="btn" onclick="openClass(9)">Explore →</button>
-  </div>
-  <div class="card">
-   <h3>Class 10</h3>
-   <p>CBSE Study Materials</p>
-   <button class="btn" onclick="openClass(10)">Explore →</button>
-  </div>
-  <div class="card">
-   <h3>Class 11</h3>
-   <p>Choose Your Stream</p>
-   <button class="btn" onclick="openClass(11)">Explore →</button>
-  </div>
-  <div class="card">
-   <h3>Class 12</h3>
-   <p>Choose Your Stream</p>
-   <button class="btn" onclick="openClass(12)">Explore →</button>
-  </div>
- </div>
-</section>
+  <section id="classes">
+    <h2 class="section-title">Choose Your Class</h2>
+    <p class="subtitle">Select your class to explore subjects and study materials.</p>
 
-<section style="background:#f8fbff">
- <h2 class="section-title">Free Learning Resources</h2>
- <p class="subtitle">Learn without paying any membership fee.</p>
- <div class="features" id="features">
-  <div class="feature">
-   <div style="font-size:32px">📚</div>
-   <h3>Study Notes</h3>
-   <p>Class-wise learning materials.</p>
-  </div>
-  <div class="feature">
-   <div style="font-size:32px">📄</div>
-   <h3>PDF Resources</h3>
-   <p>Study PDFs and learning documents.</p>
-  </div>
-  <div class="feature">
-   <div style="font-size:32px">🎥</div>
-   <h3>Video Lectures</h3>
-   <p>Educational video lessons.</p>
-  </div>
- </div>
-</section>
+    <div class="classes" id="classCards">
+      <p class="status-message">Loading classes...</p>
+    </div>
+  </section>
 
-<section id="about">
- <h2 class="section-title">Why Study with Devid?</h2>
- <p class="subtitle">A simple place for students to learn and grow.</p>
- <div class="features">
-  <div class="feature"><h3>Free Education</h3><p>Resources available free for students.</p></div>
-  <div class="feature"><h3>Easy Learning</h3><p>Organized class and subject sections.</p></div>
-  <div class="feature"><h3>Student Friendly</h3><p>Easy to use on phones and computers.</p></div>
- </div>
-</section>
+  <section style="background:#f8fbff">
+    <h2 class="section-title">Free Learning Resources</h2>
+    <p class="subtitle">Learn without paying any membership fee.</p>
+
+    <div class="features" id="features">
+      <div class="feature">
+        <div style="font-size:32px">📚</div>
+        <h3>Study Notes</h3>
+        <p>Class-wise learning materials.</p>
+      </div>
+
+      <div class="feature">
+        <div style="font-size:32px">📄</div>
+        <h3>PDF Resources</h3>
+        <p>Study PDFs and learning documents.</p>
+      </div>
+
+      <div class="feature">
+        <div style="font-size:32px">🎥</div>
+        <h3>Video Lectures</h3>
+        <p>Educational video lessons.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">Why Study with Devid?</h2>
+    <p class="subtitle">A simple place for students to learn and grow.</p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Free Education</h3>
+        <p>Resources available free for students.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Easy Learning</h3>
+        <p>Organized class and subject sections.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Student Friendly</h3>
+        <p>Easy to use on phones and computers.</p>
+      </div>
+    </div>
+  </section>
 
 </div>
 
 <section id="details">
- <button class="back" onclick="home()">← Back to Home</button>
- <h2 id="detailTitle"></h2>
- <p id="detailDescription"></p>
- <div id="subjectList" class="subject-list"></div>
+  <button class="back" onclick="home()">← Back to Home</button>
+  <h2 id="detailTitle"></h2>
+  <p id="detailDescription"></p>
+  <div id="subjectList" class="subject-list"></div>
 </section>
 
 <footer id="contact">
- <h2>Study with Devid</h2>
- <p>Learn Better. Grow Smarter.</p>
- <p style="margin-top:12px">
-  <a href="#classes">Classes</a>
-  <a href="#about">About</a>
-  <a href="https://www.instagram.com/Indian_boy_872681/" target="_blank">Instagram</a>
- </p>
- <p class="small">© 2026 Study with Devid. All Rights Reserved.</p>
+  <h2>Study with Devid</h2>
+  <p>Learn Better. Grow Smarter.</p>
+
+  <p style="margin-top:12px">
+    <a href="#classes">Classes</a>
+    <a href="#about">About</a>
+    <a href="https://www.instagram.com/Indian_boy_872681/" target="_blank" rel="noopener">Instagram</a>
+  </p>
+
+  <p class="small">© 2026 Study with Devid. All Rights Reserved.</p>
 </footer>
+
+<!-- Supabase library -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
- const SUPABASE_URL = "https://bdencqbdiwzzwprpidvg.supabase.co";
-const SUPABASE_KEY = "sb_publishable_KeP4Z3eAn-TXEsTbbctrxg_UqDgUVNy";
+
+// IMPORTANT: Put the same URL and Publishable Key used in admin.html
+const SUPABASE_URL = "PASTE_YOUR_SUPABASE_PROJECT_URL";
+const SUPABASE_KEY = "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY";
 
 const db = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
-const basicSubjects = [
- "Mathematics",
- "English",
- "Hindi",
- "Social Science",
- "Science",
- "Information Technology (IT)",
- "Artificial Intelligence (AI)"
-];
 
-const sciencePCM = [
- "Physics",
- "Chemistry",
- "Mathematics"
-];
+let currentClass = null;
+let currentStream = null;
+let currentSubject = null;
 
-const sciencePCB = [
- "Physics",
- "Chemistry",
- "Biology"
-];
-
-const commerceSubjects = [
- "Accountancy",
- "Business Studies",
- "Economics",
- "Mathematics / Applied Mathematics",
- "Entrepreneurship"
-];
-
-const humanitiesSubjects = [
- "History",
- "Political Science",
- "Geography",
- "Economics",
- "Sociology",
- "Psychology"
-];
-
-const commonSeniorSubjects = [
- "Hindi",
- "English",
- "Physical Education",
- "Computer Science"
-];
-
+// Menu
 function toggleMenu(){
- document.getElementById("nav").classList.toggle("show");
+  document.getElementById("nav").classList.toggle("show");
 }
 
 function closeMenu(){
- document.getElementById("nav").classList.remove("show");
+  document.getElementById("nav").classList.remove("show");
 }
 
-function openClass(cls){
- document.getElementById("homepage").style.display="none";
- const details=document.getElementById("details");
- details.style.display="block";
- details.scrollIntoView({behavior:"smooth"});
+// Message helper
+function showMessage(message){
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
 
- document.getElementById("detailTitle").textContent="Class "+cls;
- const list=document.getElementById("subjectList");
- list.innerHTML="";
+  const p = document.createElement("p");
+  p.className = "status-message";
+  p.textContent = message;
 
- if(cls===9 || cls===10){
-  document.getElementById("detailDescription").textContent=
-   "Choose a subject to explore study materials.";
-  showSubjects(basicSubjects,cls);
- }else{
-  document.getElementById("detailDescription").textContent=
-   "Choose your stream or common subjects.";
-  showStreams(cls);
- }
+  list.appendChild(p);
 }
 
-function showSubjects(subjects,cls){
- const list=document.getElementById("subjectList");
- list.innerHTML="";
- subjects.forEach(subject=>{
-  const div=document.createElement("div");
-  div.className="subject-item";
-  div.textContent=subject+" →";
-  div.onclick=()=>openSubject(cls,subject);
-  list.appendChild(div);
- });
+// Load classes from Supabase
+async function loadClasses(){
+
+  const cards = document.getElementById("classCards");
+  cards.innerHTML = '<p class="status-message">Loading classes...</p>';
+
+  const {data, error} = await db
+    .from("classes")
+    .select("id,class_number,title")
+    .order("class_number");
+
+  if(error){
+    cards.innerHTML = '<p class="status-message">Unable to load classes. Please try again later.</p>';
+    console.error(error);
+    return;
+  }
+
+  cards.innerHTML = "";
+
+  if(!data || data.length === 0){
+    cards.innerHTML = '<p class="status-message">No classes added yet.</p>';
+    return;
+  }
+
+  data.forEach(item => {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const heading = document.createElement("h3");
+    heading.textContent = item.title || ("Class " + item.class_number);
+
+    const description = document.createElement("p");
+    description.textContent = "CBSE Study Materials";
+
+    const button = document.createElement("button");
+    button.className = "btn";
+    button.textContent = "Explore →";
+    button.onclick = () => openClass(item);
+
+    card.appendChild(heading);
+    card.appendChild(description);
+    card.appendChild(button);
+
+    cards.appendChild(card);
+  });
 }
 
-function showStreams(cls){
- const list=document.getElementById("subjectList");
- list.innerHTML="";
+// Open a class
+async function openClass(classItem){
 
- const streams=[
-  {name:"Science – PCM",subjects:sciencePCM},
-  {name:"Science – PCB",subjects:sciencePCB},
-  {name:"Commerce",subjects:commerceSubjects},
-  {name:"Humanities",subjects:humanitiesSubjects},
-  {name:"Common Subjects",subjects:commonSeniorSubjects}
- ];
+  currentClass = classItem;
+  currentStream = null;
+  currentSubject = null;
 
- streams.forEach(stream=>{
-  const div=document.createElement("div");
-  div.className="subject-item";
-  div.innerHTML="<strong>"+stream.name+"</strong><br><small>View Subjects →</small>";
-  div.onclick=()=>openStreamSubjects(cls,stream);
-  list.appendChild(div);
- });
+  document.getElementById("homepage").style.display = "none";
+
+  const details = document.getElementById("details");
+  details.style.display = "block";
+  details.scrollIntoView({behavior:"smooth"});
+
+  document.getElementById("detailTitle").textContent =
+    classItem.title || ("Class " + classItem.class_number);
+
+  document.getElementById("detailDescription").textContent =
+    "Loading subjects...";
+
+  showMessage("Loading subjects...");
+
+  const {data: subjects, error} = await db
+    .from("subjects")
+    .select("id,class_id,name,stream,sort_order")
+    .eq("class_id", classItem.id)
+    .order("sort_order");
+
+  if(error){
+    showMessage("Unable to load subjects.");
+    console.error(error);
+    return;
+  }
+
+  document.getElementById("detailDescription").textContent =
+    "Choose a subject or stream.";
+
+  if(Number(classItem.class_number) === 9 ||
+     Number(classItem.class_number) === 10){
+
+    renderSubjects(subjects || []);
+
+  }else{
+
+    renderStreams(subjects || []);
+  }
 }
 
-function openStreamSubjects(cls,stream){
- document.getElementById("detailTitle").textContent=
-  "Class "+cls+" – "+stream.name;
- document.getElementById("detailDescription").textContent=
-  "Select a subject to explore its study materials.";
- showSubjects(stream.subjects,cls);
+// Display subjects
+function renderSubjects(subjects){
+
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
+
+  if(Number(currentClass.class_number) > 10){
+
+    const back = document.createElement("button");
+    back.className = "back";
+    back.textContent = "← Back to Streams";
+    back.onclick = () => openClass(currentClass);
+    list.appendChild(back);
+
+  }else{
+
+    const back = document.createElement("button");
+    back.className = "back";
+    back.textContent = "← Back to Home";
+    back.onclick = home;
+    list.appendChild(back);
+  }
+
+  if(subjects.length === 0){
+    const msg = document.createElement("p");
+    msg.className = "status-message";
+    msg.textContent = "No subjects added yet.";
+    list.appendChild(msg);
+    return;
+  }
+
+  subjects.forEach(subject => {
+
+    const div = document.createElement("div");
+    div.className = "subject-item";
+    div.textContent = subject.name + " →";
+
+    div.onclick = () => openSubject(subject);
+
+    list.appendChild(div);
+  });
 }
 
-function openSubject(cls,subject){
- document.getElementById("detailTitle").textContent=
-  "Class "+cls+" – "+subject;
- document.getElementById("detailDescription").textContent=
-  "Study materials for this subject will appear here.";
- const list=document.getElementById("subjectList");
- list.innerHTML=
-  '<div class="subject-item">📚 Notes – Coming Soon</div>'+
-  '<div class="subject-item">📄 PDF Resources – Coming Soon</div>'+
-  '<div class="subject-item">🎥 Video Lectures – Coming Soon</div>';
+// Display streams
+function renderStreams(subjects){
+
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
+
+  const streams = [...new Set(
+    subjects.map(s => (s.stream || "Common Subjects").trim())
+  )];
+
+  if(streams.length === 0){
+    showMessage("No streams added yet.");
+    return;
+  }
+
+  streams.forEach(stream => {
+
+    const div = document.createElement("div");
+    div.className = "subject-item";
+
+    div.innerHTML =
+      "<strong></strong><br><small>View Subjects →</small>";
+
+    div.querySelector("strong").textContent = stream;
+
+    div.onclick = () => openStreamSubjects(stream, subjects);
+
+    list.appendChild(div);
+  });
 }
 
+// Open a stream
+function openStreamSubjects(stream, subjects){
+
+  currentStream = stream;
+
+  const filtered = subjects.filter(s =>
+    (s.stream || "Common Subjects").trim() === stream
+  );
+
+  document.getElementById("detailTitle").textContent =
+    "Class " + currentClass.class_number + " – " + stream;
+
+  document.getElementById("detailDescription").textContent =
+    "Choose a subject.";
+
+  renderSubjects(filtered);
+}
+
+// Open subject and load chapters
+async function openSubject(subject){
+
+  currentSubject = subject;
+
+  document.getElementById("detailTitle").textContent =
+    "Class " + currentClass.class_number + " – " + subject.name;
+
+  document.getElementById("detailDescription").textContent =
+    "Loading chapters...";
+
+  showMessage("Loading chapters...");
+
+  const {data: chapters, error} = await db
+    .from("chapters")
+    .select("id,title,sort_order")
+    .eq("subject_id", subject.id)
+    .order("sort_order");
+
+  if(error){
+    showMessage("Unable to load chapters.");
+    console.error(error);
+    return;
+  }
+
+  renderChapters(chapters || []);
+}
+
+// Display chapters
+function renderChapters(chapters){
+
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
+
+  const back = document.createElement("button");
+  back.className = "back";
+  back.textContent = "← Back to Subjects";
+
+  back.onclick = () => backToSubjects();
+
+  list.appendChild(back);
+
+  document.getElementById("detailDescription").textContent =
+    "Choose a chapter to view its study materials.";
+
+  if(chapters.length === 0){
+    const msg = document.createElement("p");
+    msg.className = "status-message";
+    msg.textContent = "No chapters added yet.";
+    list.appendChild(msg);
+    return;
+  }
+
+  chapters.forEach(chapter => {
+
+    const div = document.createElement("div");
+    div.className = "subject-item";
+    div.textContent = chapter.title + " →";
+
+    div.onclick = () => openChapter(chapter);
+
+    list.appendChild(div);
+  });
+}
+
+// Return to subject list
+async function backToSubjects(){
+
+  document.getElementById("detailDescription").textContent =
+    "Loading subjects...";
+
+  showMessage("Loading subjects...");
+
+  const {data, error} = await db
+    .from("subjects")
+    .select("id,class_id,name,stream,sort_order")
+    .eq("class_id", currentClass.id)
+    .order("sort_order");
+
+  if(error){
+    showMessage("Unable to load subjects.");
+    console.error(error);
+    return;
+  }
+
+  if(Number(currentClass.class_number) === 9 ||
+     Number(currentClass.class_number) === 10){
+
+    document.getElementById("detailTitle").textContent =
+      currentClass.title || ("Class " + currentClass.class_number);
+
+    renderSubjects(data || []);
+
+  }else{
+
+    document.getElementById("detailTitle").textContent =
+      "Class " + currentClass.class_number + " – " + currentStream;
+
+    const filtered = (data || []).filter(s =>
+      (s.stream || "Common Subjects").trim() === currentStream
+    );
+
+    renderSubjects(filtered);
+  }
+}
+
+// Open chapter and load published materials
+async function openChapter(chapter){
+
+  document.getElementById("detailTitle").textContent =
+    chapter.title;
+
+  document.getElementById("detailDescription").textContent =
+    "Loading study materials...";
+
+  showMessage("Loading materials...");
+
+  const {data: materials, error} = await db
+    .from("materials")
+    .select("id,title,description,material_type,file_path")
+    .eq("chapter_id", chapter.id)
+    .eq("is_published", true)
+    .order("created_at");
+
+  if(error){
+    showMessage("Unable to load materials.");
+    console.error(error);
+    return;
+  }
+
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
+
+  const back = document.createElement("button");
+  back.className = "back";
+  back.textContent = "← Back to Chapters";
+
+  back.onclick = () => openSubject(currentSubject);
+
+  list.appendChild(back);
+
+  document.getElementById("detailDescription").textContent =
+    "Available study materials.";
+
+  if(!materials || materials.length === 0){
+    const msg = document.createElement("p");
+    msg.className = "status-message";
+    msg.textContent = "No published materials in this chapter yet.";
+    list.appendChild(msg);
+    return;
+  }
+
+  materials.forEach(material => {
+
+    const card = document.createElement("div");
+    card.className = "subject-item material-card";
+
+    const heading = document.createElement("h3");
+    heading.textContent = material.title;
+    card.appendChild(heading);
+
+    if(material.description){
+
+      const desc = document.createElement("p");
+      desc.textContent = material.description;
+      card.appendChild(desc);
+    }
+
+    const {data: urlData} = db.storage
+      .from("study-content")
+      .getPublicUrl(material.file_path);
+
+    const url = urlData.publicUrl;
+
+    const type = (material.material_type || "").toLowerCase();
+
+    if(type.includes("video")){
+
+      const video = document.createElement("video");
+      video.src = url;
+      video.controls = true;
+      video.preload = "metadata";
+
+      card.appendChild(video);
+    }
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Open / Download →";
+
+    card.appendChild(link);
+
+    list.appendChild(card);
+  });
+}
+
+// Return home
 function home(){
- document.getElementById("homepage").style.display="block";
- document.getElementById("details").style.display="none";
- window.scrollTo({top:0,behavior:"smooth"});
+
+  document.getElementById("homepage").style.display = "block";
+  document.getElementById("details").style.display = "none";
+
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 // Educational photo slider
-const photos=[
- "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000",
- "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000",
- "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000",
- "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1000"
+const photos = [
+  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000",
+  "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000",
+  "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000",
+  "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1000"
 ];
 
-let photoIndex=0;
-setInterval(()=>{
- photoIndex=(photoIndex+1)%photos.length;
- document.getElementById("heroPhoto").src=photos[photoIndex];
-},4000);
+let photoIndex = 0;
+
+setInterval(() => {
+
+  photoIndex = (photoIndex + 1) % photos.length;
+
+  document.getElementById("heroPhoto").src =
+    photos[photoIndex];
+
+}, 4000);
+
+// Load classes when page opens
+loadClasses();
+
 </script>
 
 </body>
-</html>
+       </html>
+       
