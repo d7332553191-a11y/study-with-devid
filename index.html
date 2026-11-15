@@ -1052,18 +1052,40 @@ async function showStudentWebsite(session){
   await loadClasses();
 }
 // Load classes when page opens
-async function checkStudentLogin(){
+ async function checkStudentLogin(){
 
   const {data} = await db.auth.getSession();
+  const session = data.session;
 
-  if(data.session){
-    await showStudentWebsite(data.session);
+  const auth = document.getElementById("authSection");
+  const home = document.getElementById("homepage");
+  const details = document.getElementById("details");
+
+  if(session){
+
+    const {data: admin} = await db
+      .from("admin_users")
+      .select("user_id")
+      .eq("user_id", session.user.id)
+      .maybeSingle();
+
+    if(admin){
+      auth.style.display = "block";
+      home.style.display = "none";
+      details.style.display = "none";
+      document.getElementById("authMessage").textContent =
+        "Admin account detected. Please use a separate Student account.";
+      return;
+    }
+
+    await showStudentWebsite(session);
+
   } else {
-    document.getElementById("authSection").style.display = "block";
-    document.getElementById("homepage").style.display = "none";
-    document.getElementById("details").style.display = "none";
+    auth.style.display = "block";
+    home.style.display = "none";
+    details.style.display = "none";
   }
-}
+ }
 
 async function studentLogout(){
   await db.auth.signOut();
