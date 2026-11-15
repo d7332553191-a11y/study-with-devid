@@ -968,9 +968,109 @@ setInterval(() => {
     photos[photoIndex];
 
 }, 4000);
+// STUDENT SIGNUP
+async function studentSignup(){
 
+  const name = document.getElementById("studentName").value.trim();
+  const email = document.getElementById("studentEmail").value.trim();
+  const password = document.getElementById("studentPassword").value;
+  const msg = document.getElementById("authMessage");
+
+  if(!name || !email || !password){
+    msg.textContent = "Please fill all fields.";
+    return;
+  }
+
+  if(password.length < 6){
+    msg.textContent = "Password must be at least 6 characters.";
+    return;
+  }
+
+  msg.textContent = "Creating account...";
+
+  const {data,error} = await db.auth.signUp({
+    email,
+    password,
+    options:{
+      data:{full_name:name},
+      emailRedirectTo:"https://d7332553191-a11y.github.io/study-with-devid/"
+    }
+  });
+
+  if(error){
+    msg.textContent = error.message;
+    return;
+  }
+
+  msg.textContent = "Signup successful! Please verify your email, then login.";
+}
+
+// STUDENT LOGIN
+async function studentLogin(){
+
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value;
+  const msg = document.getElementById("authMessage");
+
+  if(!email || !password){
+    msg.textContent = "Enter email and password.";
+    return;
+  }
+
+  msg.textContent = "Logging in...";
+
+  const {data,error} = await db.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if(error){
+    msg.textContent = error.message;
+    return;
+  }
+
+  msg.textContent = "Login successful!";
+  await showStudentWebsite(data.session);
+}
+
+// SHOW WEBSITE AFTER LOGIN
+async function showStudentWebsite(session){
+
+  document.getElementById("authSection").style.display = "none";
+  document.getElementById("homepage").style.display = "block";
+  document.getElementById("details").style.display = "none";
+
+  const {data} = await db.from("profiles")
+    .select("student_id,full_name")
+    .eq("id",session.user.id)
+    .maybeSingle();
+
+  if(data){
+    alert("Welcome " + data.full_name + "! Your Student ID: " + data.student_id);
+  }
+
+  await loadClasses();
+}
 // Load classes when page opens
-loadClasses();
+async function checkStudentLogin(){
+
+  const {data} = await db.auth.getSession();
+
+  if(data.session){
+    await showStudentWebsite(data.session);
+  } else {
+    document.getElementById("authSection").style.display = "block";
+    document.getElementById("homepage").style.display = "none";
+    document.getElementById("details").style.display = "none";
+  }
+}
+
+async function studentLogout(){
+  await db.auth.signOut();
+  location.reload();
+}
+
+checkStudentLogin();
 
 </script>
 
