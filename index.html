@@ -318,7 +318,29 @@ footer a{
 </nav>
   
 </header>
+<div id="authSection" style="max-width:420px;margin:25px auto;padding:20px;background:white;border-radius:12px;box-shadow:0 2px 10px #0002;">
 
+  <h2>Study with Devid - Student Login</h2>
+
+  <div id="signupBox">
+    <h3>New Student? Sign Up</h3>
+    <input id="studentName" type="text" placeholder="Full Name">
+    <input id="studentEmail" type="email" placeholder="Email Address">
+    <input id="studentPassword" type="password" placeholder="Create Password">
+    <button onclick="studentSignup()">Sign Up</button>
+  </div>
+
+  <hr>
+
+  <div id="studentLoginBox">
+    <h3>Already Registered? Login</h3>
+    <input id="loginEmail" type="email" placeholder="Email Address">
+    <input id="loginPassword" type="password" placeholder="Password">
+    <button onclick="studentLogin()">Login</button>
+  </div>
+
+  <p id="authMessage"></p>
+</div>
 <div id="homepage">
 
   <div class="hero">
