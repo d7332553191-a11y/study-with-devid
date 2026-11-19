@@ -441,7 +441,31 @@ footer a{
   <section id="classes">
     <h2 class="section-title">Choose Your Class</h2>
     <p class="subtitle">Select your class to explore subjects and study materials.</p>
+<div id="studySearchBox" style="
+  max-width:700px;
+  margin:25px auto;
+  padding:15px;
+  background:#f1f6ff;
+  border-radius:14px;
+">
+  <input
+    type="search"
+    id="studySearchInput"
+    placeholder="🔍 Search Class, Subject or Chapter..."
+    oninput="searchStudyContent()"
+    style="
+      width:100%;
+      box-sizing:border-box;
+      padding:15px;
+      border:2px solid #2563eb;
+      border-radius:10px;
+      font-size:16px;
+      outline:none;
+    "
+  >
 
+  <div id="studySearchResults" style="margin-top:12px;"></div>
+</div>
     <div class="classes" id="classCards">
       <p class="status-message">Loading classes...</p>
     </div>
