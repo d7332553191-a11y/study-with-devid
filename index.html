@@ -1042,6 +1042,37 @@ setInterval(() => {
     photos[photoIndex];
 
 }, 4000);
+  
+// SWITCH BETWEEN LOGIN AND SIGNUP
+function showSignup(){
+  document.getElementById("studentLoginBox").style.display = "none";
+  document.getElementById("signupBox").style.display = "block";
+  document.getElementById("authMessage").textContent = "";
+}
+
+function showLogin(){
+  document.getElementById("signupBox").style.display = "none";
+  document.getElementById("studentLoginBox").style.display = "block";
+  document.getElementById("authMessage").textContent = "";
+}
+
+// GOOGLE LOGIN
+async function googleLogin(){
+  const msg = document.getElementById("authMessage");
+  msg.textContent = "Connecting to Google...";
+
+  const {data, error} = await db.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: "https://d7332553191-a11y.github.io/study-with-devid/"
+    }
+  });
+
+  if(error){
+    msg.textContent = error.message;
+  }
+}
+  
 // STUDENT SIGNUP
 async function studentSignup(){
 
