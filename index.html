@@ -660,7 +660,132 @@ function showMessage(message){
 
   list.appendChild(p);
 }
+// SEARCH CLASSES, SUBJECTS AND CHAPTERS
+async function searchStudyContent(){
 
+  const input = document.getElementById("studySearchInput");
+  const results = document.getElementById("studySearchResults");
+
+  const query = input.value.trim().toLowerCase();
+
+  results.innerHTML = "";
+
+  if(!query) return;
+
+  results.innerHTML = "<p>Searching...</p>";
+
+  const [classesRes, subjectsRes, chaptersRes, materialsRes] =
+    await Promise.all([
+
+      db.from("classes")
+        .select("id,class_number,title"),
+
+      db.from("subjects")
+        .select("id,class_id,name,stream"),
+
+      db.from("chapters")
+        .select("id,subject_id,title"),
+
+      db.from("materials")
+        .select("id,title,material_type,file_path,chapter_id")
+        .eq("is_published", true)
+    ]);
+
+  if(classesRes.error || subjectsRes.error ||
+     chaptersRes.error || materialsRes.error){
+
+    results.innerHTML = "<p>Search failed. Please try again.</p>";
+    console.error(
+      classesRes.error || subjectsRes.error ||
+      chaptersRes.error || materialsRes.error
+    );
+    return;
+  }
+
+  const classes = classesRes.data || [];
+  const subjects = subjectsRes.data || [];
+  const chapters = chaptersRes.data || [];
+  const materials = materialsRes.data || [];
+
+  let found = 0;
+  results.innerHTML = "";
+
+  chapters.forEach(chapter => {
+
+    const subject = subjects.find(
+      s => s.id === chapter.subject_id
+    );
+
+    if(!subject) return;
+
+    const classItem = classes.find(
+      c => c.id === subject.class_id
+    );
+
+    if(!classItem) return;
+
+    const className =
+      classItem.title || ("Class " + classItem.class_number);
+
+    const searchableText = (
+      className + " " +
+      "Class " + classItem.class_number + " " +
+      subject.name + " " +
+      (subject.stream || "") + " " +
+      chapter.title
+    ).toLowerCase();
+
+    if(!searchableText.includes(query)) return;
+
+    const chapterMaterials = materials.filter(
+      m => m.chapter_id === chapter.id
+    );
+
+    if(chapterMaterials.length === 0) return;
+
+    found++;
+
+    const card = document.createElement("div");
+    card.style.cssText =
+      "background:white;padding:13px;margin:10px 0;" +
+      "border:1px solid #d5deed;border-radius:10px;";
+
+    const heading = document.createElement("h3");
+    heading.textContent = chapter.title;
+    card.appendChild(heading);
+
+    const info = document.createElement("p");
+    info.textContent =
+      className + " • " + subject.name;
+    card.appendChild(info);
+
+    chapterMaterials.forEach(material => {
+
+      const url = db.storage
+        .from("study-content")
+        .getPublicUrl(material.file_path).data.publicUrl;
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent =
+        "📄 " + material.title + " →";
+
+      link.style.cssText =
+        "display:block;padding:9px;color:#2563eb;";
+
+      card.appendChild(link);
+    });
+
+    results.appendChild(card);
+  });
+
+  if(found === 0){
+    results.innerHTML =
+      "<p>No matching published study materials found.</p>";
+  }
+  }
 // Load classes from Supabase
 async function loadClasses(){
 
