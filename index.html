@@ -1049,7 +1049,14 @@ setInterval(() => {
     photos[photoIndex];
 
 }, 4000);
-  
+ // CONTINUE AS GUEST
+function continueAsGuest(){
+  document.getElementById("authSection").style.display = "none";
+  document.getElementById("homepage").style.display = "block";
+  document.getElementById("details").style.display = "none";
+
+  loadClasses();
+  } 
 // SWITCH BETWEEN LOGIN AND SIGNUP
 function showSignup(){
   document.getElementById("studentLoginBox").style.display = "none";
