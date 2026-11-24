@@ -201,7 +201,46 @@
 const SUPABASE_URL = "https://bdencqbdiwzzwprpidvg.supabase.co";
 const SUPABASE_KEY = "sb_publishable_KeP4Z3eAn-TXEsTbbctrxg_UqDgUVNy";
 const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+// WEBSITE ACTIVITY TRACKING
+function getVisitorId(){
+  let visitorId = localStorage.getItem("growVidVisitorId");
 
+  if(!visitorId){
+    visitorId = crypto.randomUUID();
+    localStorage.setItem("growVidVisitorId", visitorId);
+  }
+
+  return visitorId;
+}
+
+async function trackPageView(){
+  try{
+    const {data:{session}} = await db.auth.getSession();
+
+    const {error} = await db.from("website_activity").insert({
+      visitor_id: getVisitorId(),
+      user_id: session?.user?.id || null,
+      event_type: "page_view"
+    });
+
+    if(error) console.error("Page tracking error:", error);
+  }catch(error){
+    console.error("Page tracking error:", error);
+  }
+}
+
+// Record successful sign-ins, including Google sign-in
+db.auth.onAuthStateChange((event, session) => {
+  if(event === "SIGNED_IN" && session?.user){
+    db.from("website_activity").insert({
+      visitor_id: getVisitorId(),
+      user_id: session.user.id,
+      event_type: "login"
+    }).then(({error}) => {
+      if(error) console.error("Login tracking error:", error);
+    });
+  }
+});
 let currentClass = null;
 let currentStream = null;
 let currentSubject = null;
