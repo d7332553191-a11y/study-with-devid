@@ -201,7 +201,62 @@ async function logout(){
  await db.auth.signOut();
  location.reload();
 }
+async function loadWebsiteStats(){
+  const msg = document.getElementById("statsMsg");
 
+  msg.textContent = "Loading statistics...";
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const todayISO = today.toISOString();
+
+  const [totalViews,todayViews,totalLogins,todayLogins] =
+    await Promise.all([
+
+      db.from("website_activity")
+        .select("id",{count:"exact",head:true})
+        .eq("event_type","page_view"),
+
+      db.from("website_activity")
+        .select("id",{count:"exact",head:true})
+        .eq("event_type","page_view")
+        .gte("created_at",todayISO),
+
+      db.from("website_activity")
+        .select("id",{count:"exact",head:true})
+        .eq("event_type","login"),
+
+      db.from("website_activity")
+        .select("id",{count:"exact",head:true})
+        .eq("event_type","login")
+        .gte("created_at",todayISO)
+    ]);
+
+  const error =
+    totalViews.error ||
+    todayViews.error ||
+    totalLogins.error ||
+    todayLogins.error;
+
+  if(error){
+    msg.textContent = "Statistics error: " + error.message;
+    return;
+  }
+
+  document.getElementById("totalViews").textContent =
+    totalViews.count ?? 0;
+
+  document.getElementById("todayViews").textContent =
+    todayViews.count ?? 0;
+
+  document.getElementById("totalLogins").textContent =
+    totalLogins.count ?? 0;
+
+  document.getElementById("todayLogins").textContent =
+    todayLogins.count ?? 0;
+
+  msg.textContent = "Statistics updated successfully.";
+}
 async function refreshAll(){
  await loadClasses();
  await loadSubjects();
