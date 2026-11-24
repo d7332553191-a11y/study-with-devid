@@ -693,7 +693,69 @@ footer a {
 
 <!-- SUPABASE LIBRARY -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(async function(){
 
+const adDb = window.supabase.createClient(
+  "https://bdencqbdiwzzwprpidvg.supabase.co",
+  "sb_publishable_KeP4Z3eAn-TXEsTbbctrxg_UqDgUVNy"
+);
+
+const image = document.getElementById("cbseAdImage");
+const empty = document.getElementById("cbseAdEmpty");
+const ticker = document.getElementById("cbseAdTicker");
+const link = document.getElementById("cbseAdLink");
+
+let ads = [];
+let current = 0;
+
+const {data,error} = await adDb
+  .from("advertisements")
+  .select("title,notification,image_path,target_url")
+  .eq("is_active",true)
+  .order("sort_order");
+
+if(error){
+  console.error(error);
+  return;
+}
+
+ads = data || [];
+
+if(!ads.length) return;
+
+function showAd(index){
+
+  const ad = ads[index];
+
+  const result = adDb.storage
+    .from("ad-images")
+    .getPublicUrl(ad.image_path);
+
+  image.src = result.data.publicUrl;
+  image.style.display = "block";
+  empty.style.display = "none";
+
+  ticker.textContent = ad.notification || ad.title;
+
+  if(ad.target_url){
+    link.href = ad.target_url;
+  }else{
+    link.removeAttribute("href");
+  }
+}
+
+showAd(0);
+
+if(ads.length > 1){
+  setInterval(function(){
+    current = (current + 1) % ads.length;
+    showAd(current);
+  },5000);
+}
+
+})();
+</script>
 <script>
 
 // ======================================
