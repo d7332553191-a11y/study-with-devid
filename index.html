@@ -819,6 +819,7 @@ setInterval(() => {
 },4000);
 
 /* Start the site only after the Supabase client has loaded. */
+  trackPageView();
 checkStudentLogin().catch(error => {
   console.error("Website startup error:",error);
   document.getElementById("authMessage").textContent =
