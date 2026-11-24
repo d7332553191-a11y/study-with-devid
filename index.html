@@ -1,473 +1,101 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="google-site-verification" content="srGjQpjHDyeeewEU8crK894FDtd5gPaNuSg6Gi3eHiU">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="icon" type="image/png" href="Study%20with%20Devid_%20Neon%20Learning%20Hub.png">
-
-<title>Grow with Vid | Free CBSE Notes & Study Material</title>
-<meta name="description" content="Grow with Vid provides free CBSE notes, chapter-wise study materials, PDFs and videos for Classes 9 to 12.">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Grow with Vid">
-<meta property="og:site_name" content="Grow with Vid">
-<meta property="og:url" content="https://d7332553191-a11y.github.io/study-with-devid/">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Grow with Vid",
-  "alternateName": "Grow with Vid",
-  "url": "https://d7332553191-a11y.github.io/study-with-devid/"
-}
-</script>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #fff;
-  color: #172b4d;
-  line-height: 1.6;
-}
-
-header {
-  background: white;
-  padding: 15px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 12px #00000010;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.logo {
-  font-size: 21px;
-  font-weight: bold;
-  color: #1765d1;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.site-dp {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #f5c542;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-nav a {
-  text-decoration: none;
-  color: #263b59;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: #1765d1;
-}
-
-.menu {
-  display: none;
-  background: #1765d1;
-  color: white;
-  border: 0;
-  padding: 9px 13px;
-  border-radius: 7px;
-}
-
-.hero {
-  padding: 65px 7%;
-  background: linear-gradient(110deg, #eff6ff, #fff);
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 35px;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: 44px;
-  line-height: 1.2;
-  margin: 15px 0;
-  color: #142c50;
-}
-
-.hero p {
-  color: #61718a;
-  margin-bottom: 22px;
-}
-
-.tag {
-  color: #1765d1;
-  font-weight: bold;
-  font-size: 13px;
-}
-
-.btn {
-  display: inline-block;
-  background: #1765d1;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  border: 0;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #104ca5;
-}
-
-.hero img {
-  width: 100%;
-  height: 310px;
-  object-fit: cover;
-  border-radius: 18px;
-}
-
-section {
-  padding: 55px 7%;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 29px;
-  margin-bottom: 10px;
-  color: #142c50;
-}
-
-.subtitle {
-  text-align: center;
-  color: #718096;
-  margin-bottom: 30px;
-}
-
-.classes {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.card {
-  background: white;
-  border: 1px solid #e5edf8;
-  padding: 25px 18px;
-  border-radius: 14px;
-  box-shadow: 0 5px 20px #15365b0b;
-  text-align: center;
-  transition: .2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px #15365b18;
-}
-
-.card h3 {
-  color: #1765d1;
-  font-size: 23px;
-  margin-bottom: 8px;
-}
-
-.card p {
-  color: #718096;
-  font-size: 13px;
-  margin-bottom: 15px;
-}
-
-.subject-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.subject-item {
-  background: white;
-  padding: 17px;
-  border: 1px solid #e1eaf6;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.subject-item:hover {
-  border-color: #1765d1;
-  color: #1765d1;
-}
-
-.back {
-  margin-bottom: 18px;
-  background: #e8f1ff;
-  color: #1765d1;
-  padding: 9px 15px;
-  border: 0;
-  border-radius: 7px;
-  cursor: pointer;
-}
-
-#details {
-  display: none;
-  background: #f8fbff;
-  min-height: 180px;
-}
-
-#details h2 {
-  color: #1765d1;
-  margin-bottom: 15px;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.feature {
-  padding: 22px;
-  border-radius: 12px;
-  background: #f4f8ff;
-  text-align: center;
-}
-
-.feature h3 {
-  color: #1765d1;
-  margin: 8px;
-}
-
-footer {
-  background: #142c50;
-  color: white;
-  padding: 35px 7%;
-  text-align: center;
-}
-
-footer a {
-  color: #bcd8ff;
-  text-decoration: none;
-  margin: 8px;
-}
-
-.small {
-  font-size: 13px;
-  color: #d1dded;
-  margin-top: 12px;
-}
-
-.material-card {
-  margin-bottom: 14px;
-}
-
-.material-card h3 {
-  color: #1765d1;
-}
-
-.material-card p {
-  margin-top: 6px;
-  color: #61718a;
-}
-
-.material-card a {
-  color: #1765d1;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.material-card video {
-  width: 100%;
-  max-height: 350px;
-  margin-top: 12px;
-  border-radius: 10px;
-  background: #000;
-}
-
-.status-message {
-  color: #61718a;
-  padding: 15px;
-  grid-column: 1 / -1;
-}
-
-/* LOGIN SECTION */
-#authSection {
-  max-width: 420px;
-  margin: 35px auto;
-  padding: 28px 22px;
-  background: #111827;
-  color: white;
-  border: 1px solid #263b60;
-  border-radius: 20px;
-  box-shadow: 0 0 25px #087bff35;
-  text-align: center;
-}
-
-#authSection h2 {
-  color: white;
-  font-size: 25px;
-  margin-bottom: 8px;
-}
-
-#authSection p {
-  color: #aab8cc;
-  margin-top: 10px;
-}
-
-#authSection input {
-  display: block;
-  width: 100%;
-  margin: 13px 0;
-  padding: 14px;
-  background: #1e293b;
-  color: white;
-  border: 1px solid #38527a;
-  border-radius: 10px;
-}
-
-#authSection button {
-  width: 100%;
-  padding: 13px;
-  margin-top: 10px;
-  border: 0;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #087bff, #7548ff);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#authSection .social-btn {
-  background: #202b3c;
-  border: 1px solid #40516b;
-}
-
-#authSection .switch-link {
-  color: #60a5fa;
-  cursor: pointer;
-}
-
-/* CBSE LIVE */
-#cbseAdSlider {
-  max-width: 900px;
-  margin: 20px auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  background: #172b55;
-  box-shadow: 0 5px 18px #0002;
-}
-
-#cbseAdImage {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: none;
-}
-
-#cbseAdEmpty {
-  padding: 100px 15px;
-  color: white;
-  text-align: center;
-}
-
-#cbseAdTicker {
-  background: #d71920;
-  color: white;
-  padding: 14px;
-  font-weight: bold;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-@media(max-width:750px) {
-  header {
-    padding: 13px 5%;
-  }
-
-  nav {
-    display: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 20px;
-    flex-direction: column;
-    box-shadow: 0 5px 12px #0002;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  .menu {
-    display: block;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 42px 6%;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .hero img {
-    height: 230px;
-  }
-
-  .classes {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .subject-list {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 40px 6%;
-  }
-
-  #cbseAdImage {
-    height: 220px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="srGjQpjHDyeeewEU8crK894FDtd5gPaNuSg6Gi3eHiU">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow with Vid | Free CBSE Notes & Study Material</title>
+  <meta name="description" content="Grow with Vid provides free CBSE notes, chapter-wise study materials, PDFs and videos for Classes 9 to 12.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Grow with Vid">
+  <meta property="og:site_name" content="Grow with Vid">
+  <meta property="og:url" content="https://d7332553191-a11y.github.io/study-with-devid/">
+  <link rel="icon" type="image/png" href="Study%20with%20Devid_%20Neon%20Learning%20Hub.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,sans-serif;background:#f7faff;color:#172b4d;line-height:1.6}
+    header{background:#fff;padding:14px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #00000010;position:sticky;top:0;z-index:20}
+    .logo{font-size:22px;font-weight:bold;color:#1765d1;display:flex;align-items:center;gap:10px}
+    .site-dp{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid #f5c542}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{text-decoration:none;color:#263b59;font-weight:600;font-size:14px}
+    nav a:hover{color:#1765d1}
+    .menu{display:none;background:#1765d1;color:white;border:0;padding:10px 14px;border-radius:8px;font-size:20px}
+    .hero{padding:60px 7%;background:linear-gradient(110deg,#eff6ff,#fff);display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+    .hero h1{font-size:42px;line-height:1.2;margin:15px 0;color:#142c50}
+    .hero p{color:#61718a;margin-bottom:22px}
+    .tag{color:#1765d1;font-weight:bold;font-size:13px}
+    .btn{display:inline-block;background:#1765d1;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;border:0;font-weight:bold;cursor:pointer}
+    .btn:hover{background:#104ca5}
+    .hero img{width:100%;height:300px;object-fit:cover;border-radius:18px}
+    section{padding:48px 7%}
+    .section-title{text-align:center;font-size:29px;margin-bottom:10px;color:#142c50}
+    .subtitle{text-align:center;color:#718096;margin-bottom:28px}
+    .classes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:white;border:1px solid #e5edf8;padding:24px 18px;border-radius:14px;box-shadow:0 5px 20px #15365b0b;text-align:center}
+    .card h3{color:#1765d1;font-size:23px;margin-bottom:8px}
+    .card p{color:#718096;font-size:13px;margin-bottom:15px}
+    .subject-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .subject-item{background:white;padding:17px;border:1px solid #e1eaf6;border-radius:10px;cursor:pointer}
+    .subject-item:hover{border-color:#1765d1;color:#1765d1}
+    .back{margin:0 0 18px;background:#e8f1ff;color:#1765d1;padding:9px 15px;border:0;border-radius:7px;cursor:pointer}
+    #details{display:none;background:#f8fbff;min-height:220px}
+    #details h2{color:#1765d1;margin-bottom:12px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{padding:22px;border-radius:12px;background:#f4f8ff;text-align:center}
+    .feature h3{color:#1765d1;margin:8px}
+    footer{background:#142c50;color:white;padding:35px 7%;text-align:center}
+    footer a{color:#bcd8ff;text-decoration:none;margin:8px}
+    .small{font-size:13px;color:#d1dded;margin-top:12px}
+    .material-card{margin-bottom:14px;cursor:default}
+    .material-card h3{color:#1765d1}
+    .material-card p{margin-top:6px;color:#61718a}
+    .material-card a{color:#1765d1;font-weight:bold;display:inline-block;margin-top:10px}
+    .material-card video{width:100%;max-height:350px;margin-top:12px;border-radius:10px;background:#000}
+    .status-message{color:#61718a;padding:15px;grid-column:1/-1}
+    #authSection{max-width:680px;margin:35px auto;padding:35px 28px;background:#111827;color:white;border:1px solid #263b60;border-radius:22px;box-shadow:0 0 25px #087bff35;text-align:center}
+    #authSection h2{color:white;font-size:30px;margin-bottom:8px}
+    #authSection p{color:#aab8cc;margin:12px 0}
+    #authSection input{display:block;width:100%;margin:13px 0;padding:16px;background:#1e293b;color:white;border:1px solid #38527a;border-radius:12px;font-size:16px}
+    #authSection button{width:100%;padding:15px;margin-top:10px;border:0;border-radius:10px;background:linear-gradient(90deg,#087bff,#7548ff);color:white;font-weight:bold;font-size:16px;cursor:pointer}
+    #authSection .social-btn{background:#202b3c;border:1px solid #40516b}
+    #authSection .switch-link{color:#60a5fa;cursor:pointer;text-decoration:underline}
+    #authMessage{overflow-wrap:anywhere}
+    #cbseLive{background:#f8fbff;padding:38px 15px}
+    #cbseAdSlider{max-width:900px;margin:20px auto;overflow:hidden;border-radius:16px;background:#172b55;box-shadow:0 5px 18px #0002}
+    #cbseAdLink{display:block;text-decoration:none}
+    #cbseAdImage{width:100%;height:260px;object-fit:cover;display:none}
+    #cbseAdEmpty{padding:65px 15px;color:white;text-align:center}
+    #cbseAdTicker{background:#d71920;color:white;padding:13px;white-space:normal;font-weight:bold}
+    #studySearchBox{max-width:700px;margin:25px auto;padding:15px;background:#f1f6ff;border-radius:14px}
+    #studySearchInput{width:100%;padding:15px;border:2px solid #2563eb;border-radius:10px;font-size:16px}
+    #studySearchResults{margin-top:12px}
+    @media(max-width:750px){
+      header{padding:12px 5%}
+      nav{display:none;position:absolute;top:82px;left:0;width:100%;background:white;padding:20px;flex-direction:column;box-shadow:0 5px 12px #0002}
+      nav.show{display:flex}
+      .menu{display:block}
+      .hero{grid-template-columns:1fr;padding:40px 6%}
+      .hero h1{font-size:34px}
+      .hero img{height:230px}
+      .classes{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:1fr}
+      .subject-list{grid-template-columns:1fr}
+      section{padding:38px 6%}
+      #authSection{margin:20px 12px;padding:28px 20px}
+    }
+    @media(max-width:380px){.classes{grid-template-columns:1fr}.logo{font-size:18px}.site-dp{width:48px;height:48px}}
+  </style>
 </head>
-
 <body>
-
 <header>
   <div class="logo">
-    <img src="Study%20with%20Devid_%20Neon%20Learning%20Hub.png"
-         alt="Grow with Vid Logo"
-         class="site-dp">
+    <img src="Study%20with%20Devid_%20Neon%20Learning%20Hub.png" alt="Grow with Vid Logo" class="site-dp"
+         onerror="this.style.display='none'">
     <span>Grow with Vid</span>
   </div>
-
-  <button class="menu" onclick="toggleMenu()">☰</button>
-
+  <button class="menu" type="button" onclick="toggleMenu()" aria-label="Open menu">☰</button>
   <nav id="nav">
     <a href="#" onclick="home();closeMenu()">Home</a>
     <a href="#classes" onclick="closeMenu()">Classes</a>
@@ -478,508 +106,568 @@ footer a {
   </nav>
 </header>
 
-<!-- STUDENT LOGIN -->
 <div id="authSection">
-
   <h2>🎓 Welcome to<br>Grow with Vid</h2>
   <p>Login to access your study materials</p>
-
   <div id="studentLoginBox">
-
-    <input id="loginEmail" type="email"
-           placeholder="Enter Email Address">
-
-    <input id="loginPassword" type="password"
-           placeholder="Enter Password">
-
-    <button onclick="studentLogin()">Login →</button>
-
+    <input id="loginEmail" type="email" placeholder="Enter Email Address" autocomplete="email">
+    <input id="loginPassword" type="password" placeholder="Enter Password" autocomplete="current-password">
+    <button type="button" onclick="studentLogin()">Login →</button>
     <p>OR</p>
-
-    <button class="social-btn" onclick="googleLogin()">
-      G &nbsp; Continue with Google
-    </button>
-
-    <p>Don't have an account?
-      <span class="switch-link" onclick="showSignup()">Sign Up</span>
-    </p>
-
+    <button class="social-btn" type="button" onclick="googleLogin()">G &nbsp; Continue with Google</button>
+    <p>Don't have an account? <span class="switch-link" onclick="showSignup()">Sign Up</span></p>
     <p>OR</p>
-
-    <button class="social-btn" onclick="continueAsGuest()">
-      Continue as Guest
-    </button>
-
+    <button class="social-btn" type="button" onclick="continueAsGuest()">Continue as Guest</button>
   </div>
-
-  <div id="signupBox" style="display:none;">
-
+  <div id="signupBox" style="display:none">
     <h3>Create Student Account</h3>
-
-    <input id="studentName" type="text"
-           placeholder="Full Name">
-
-    <input id="studentEmail" type="email"
-           placeholder="Email Address">
-
-    <input id="studentPassword" type="password"
-           placeholder="Create Password">
-
-    <button onclick="studentSignup()">Sign Up</button>
-
-    <p>Already registered?
-      <span class="switch-link" onclick="showLogin()">Login</span>
-    </p>
-
+    <input id="studentName" type="text" placeholder="Full Name" autocomplete="name">
+    <input id="studentEmail" type="email" placeholder="Email Address" autocomplete="email">
+    <input id="studentPassword" type="password" placeholder="Create Password (minimum 6 characters)" autocomplete="new-password">
+    <button type="button" onclick="studentSignup()">Create Account</button>
+    <p>Already registered? <span class="switch-link" onclick="showLogin()">Login</span></p>
   </div>
-
-  <p id="authMessage"></p>
+  <p id="authMessage" role="status"></p>
 </div>
 
-<!-- HOMEPAGE -->
-<div id="homepage" style="display:none;">
-
+<div id="homepage" style="display:none">
   <div class="hero">
-
     <div>
       <span class="tag">YOUR LEARNING JOURNEY STARTS HERE</span>
-
       <h1>Learn Today.<br>Lead Tomorrow.</h1>
-
-      <p>
-        Your learning companion for CBSE Classes 9–12.
-        Explore study materials, notes and educational resources for free.
-      </p>
-
+      <p>Your learning companion for CBSE Classes 9–12. Explore study materials, notes and educational resources for free.</p>
       <a href="#classes" class="btn">Explore Classes →</a>
     </div>
-
-    <img
-      id="heroPhoto"
-      src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000"
-      alt="Students learning">
-
+    <img id="heroPhoto" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000" alt="Students learning">
   </div>
 
-  <!-- CLASSES -->
   <section id="classes">
-
     <h2 class="section-title">Choose Your Class</h2>
-
-    <p class="subtitle">
-      Select your class to explore subjects and study materials.
-    </p>
-
-    <div id="studySearchBox"
-         style="max-width:700px;margin:25px auto;padding:15px;background:#f1f6ff;border-radius:14px;">
-
-      <input
-        type="search"
-        id="studySearchInput"
-        placeholder="🔍 Search Class, Subject or Chapter..."
-        oninput="searchStudyContent()"
-        style="width:100%;padding:15px;border:2px solid #2563eb;border-radius:10px;font-size:16px;">
-
-      <div id="studySearchResults" style="margin-top:12px;"></div>
+    <p class="subtitle">Select your class to explore subjects and study materials.</p>
+    <div id="studySearchBox">
+      <input type="search" id="studySearchInput" placeholder="🔍 Search Class, Subject or Chapter..." oninput="searchStudyContent()">
+      <div id="studySearchResults"></div>
     </div>
-
-    <div class="classes" id="classCards">
-      <p class="status-message">Loading classes...</p>
-    </div>
-
+    <div class="classes" id="classCards"><p class="status-message">Loading classes...</p></div>
   </section>
 
-  <!-- CBSE LIVE -->
-  <section id="cbseLive" style="background:#f8fbff;padding:35px 15px;">
-
+  <section id="cbseLive">
     <h2 class="section-title">🔴 CBSE LIVE</h2>
-
-    <p class="subtitle">
-      Latest CBSE updates and announcements.
-    </p>
-
+    <p class="subtitle">Latest CBSE updates and announcements.</p>
     <div id="cbseAdSlider">
-
-      <a id="cbseAdLink"
-         href="#"
-         target="_blank"
-         rel="noopener"
-         style="display:block;text-decoration:none;">
-
-        <img id="cbseAdImage"
-             src=""
-             alt="CBSE LIVE Advertisement">
-
-        <div id="cbseAdEmpty">
-          <h2>CBSE LIVE</h2>
-          <p>New advertisements will appear here.</p>
-        </div>
-
+      <a id="cbseAdLink" href="#" target="_blank" rel="noopener">
+        <img id="cbseAdImage" src="" alt="CBSE LIVE Advertisement">
+        <div id="cbseAdEmpty"><h2>CBSE LIVE</h2><p>New advertisements will appear here.</p></div>
       </a>
-
-      <div id="cbseAdTicker">
-        <div id="cbseAdTickerText">
-          CBSE LIVE - Latest Updates
-        </div>
-      </div>
-
+      <div id="cbseAdTicker">CBSE LIVE - Latest Updates</div>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
-
     <h2 class="section-title">Why Grow with Vid?</h2>
-
-    <p class="subtitle">
-      A simple place for students to learn and grow.
-    </p>
-
-    <div class="features">
-
-      <div class="feature">
-        <h3>Free Education</h3>
-        <p>Resources available free for students.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Easy Learning</h3>
-        <p>Organized class and subject sections.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Student Friendly</h3>
-        <p>Easy to use on phones and computers.</p>
-      </div>
-
+    <p class="subtitle">A simple place for students to learn and grow.</p>
+    <div class="features" id="features">
+      <div class="feature"><h3>Free Education</h3><p>Resources available free for students.</p></div>
+      <div class="feature"><h3>Easy Learning</h3><p>Organized class and subject sections.</p></div>
+      <div class="feature"><h3>Student Friendly</h3><p>Easy to use on phones and computers.</p></div>
     </div>
   </section>
-
 </div>
 
-<!-- CLASS / SUBJECT DETAILS -->
 <section id="details">
-
-  <button class="back" onclick="home()">← Back to Home</button>
-
+  <button class="back" type="button" onclick="home()">← Back to Home</button>
   <h2 id="detailTitle"></h2>
-
   <p id="detailDescription"></p>
-
   <div id="subjectList" class="subject-list"></div>
-
 </section>
 
-<!-- FOOTER -->
 <footer id="contact">
-
   <h2>Grow with Vid</h2>
-
   <p>Learn Better. Grow Smarter.</p>
-
   <p style="margin-top:12px">
     <a href="#classes">Classes</a>
     <a href="#about">About</a>
-    <a href="https://www.instagram.com/Indian_boy_872681/"
-       target="_blank"
-       rel="noopener">Instagram</a>
+    <a href="https://www.instagram.com/Indian_boy_872681/" target="_blank" rel="noopener">Instagram</a>
   </p>
-
-  <p class="small">
-    © 2026 Grow with Vid. All Rights Reserved.
-  </p>
-
+  <p class="small">© 2026 Grow with Vid. All Rights Reserved.</p>
 </footer>
 
-<!-- SUPABASE LIBRARY -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-(async function(){
+"use strict";
 
-const adDb = window.supabase.createClient(
-  "https://bdencqbdiwzzwprpidvg.supabase.co",
-  "sb_publishable_KeP4Z3eAn-TXEsTbbctrxg_UqDgUVNy"
-);
-
-const image = document.getElementById("cbseAdImage");
-const empty = document.getElementById("cbseAdEmpty");
-const ticker = document.getElementById("cbseAdTicker");
-const link = document.getElementById("cbseAdLink");
-
-let ads = [];
-let current = 0;
-
-const {data,error} = await adDb
-  .from("advertisements")
-  .select("title,notification,image_path,target_url")
-  .eq("is_active",true)
-  .order("sort_order");
-
-if(error){
-  console.error(error);
-  return;
-}
-
-ads = data || [];
-
-if(!ads.length) return;
-
-function showAd(index){
-
-  const ad = ads[index];
-
-  const result = adDb.storage
-    .from("ad-images")
-    .getPublicUrl(ad.image_path);
-
-  image.src = result.data.publicUrl;
-  image.style.display = "block";
-  empty.style.display = "none";
-
-  ticker.textContent = ad.notification || ad.title;
-
-  if(ad.target_url){
-    link.href = ad.target_url;
-  }else{
-    link.removeAttribute("href");
-  }
-}
-
-showAd(0);
-
-if(ads.length > 1){
-  setInterval(function(){
-    current = (current + 1) % ads.length;
-    showAd(current);
-  },5000);
-}
-
-})();
-</script>
-<script>
-
-// ======================================
-// SUPABASE CONNECTION
-// ======================================
-
+/* Use the same Supabase project URL and publishable key as admin.html.
+   Never put a service_role/secret key in this public website. */
 const SUPABASE_URL = "https://bdencqbdiwzzwprpidvg.supabase.co";
-
 const SUPABASE_KEY = "sb_publishable_KeP4Z3eAn-TXEsTbbctrxg_UqDgUVNy";
-
-const db = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 let currentClass = null;
 let currentStream = null;
 let currentSubject = null;
+let allCurrentSubjects = [];
 
+function toggleMenu(){ document.getElementById("nav").classList.toggle("show"); }
+function closeMenu(){ document.getElementById("nav").classList.remove("show"); }
 
-// ======================================
-// NAVIGATION MENU
-// ======================================
-
-function toggleMenu() {
-  document.getElementById("nav").classList.toggle("show");
-}
-
-function closeMenu() {
-  document.getElementById("nav").classList.remove("show");
-}
-
-
-// ======================================
-// MESSAGE HELPER
-// ======================================
-
-function showMessage(message) {
-
+function showMessage(message){
   const list = document.getElementById("subjectList");
-
   list.innerHTML = "";
-
   const p = document.createElement("p");
-
   p.className = "status-message";
   p.textContent = message;
-
   list.appendChild(p);
 }
 
-
-// ======================================
-// CBSE LIVE ADVERTISEMENT SYSTEM
-// ======================================
-
-let ads = [];
-let currentAd = 0;
-let adTimer = null;
-
-async function loadCbseAds() {
-
-  const image = document.getElementById("cbseAdImage");
-  const empty = document.getElementById("cbseAdEmpty");
-  const ticker = document.getElementById("cbseAdTickerText");
-  const link = document.getElementById("cbseAdLink");
-
-  image.style.display = "none";
-  empty.style.display = "block";
-
-  try {
-
-    const { data, error } = await db
-      .from("advertisements")
-      .select("title,notification,image_path,target_url")
-      .eq("is_active", true)
-      .order("sort_order", { ascending: true });
-
-    if (error) {
-      console.error("CBSE Ads Error:", error.message);
-      return;
-    }
-
-    ads = data || [];
-
-    if (ads.length === 0) {
-      ticker.textContent = "CBSE LIVE - Latest Updates";
-      return;
-    }
-
-    function showAd(index) {
-
-      const ad = ads[index];
-
-      if (!ad) return;
-
-      const title = ad.title || "CBSE LIVE";
-
-      ticker.textContent =
-        ad.notification || title;
-
-      if (ad.image_path) {
-
-        const result = db.storage
-          .from("ad-images")
-          .getPublicUrl(ad.image_path);
-
-        image.onerror = function() {
-          image.style.display = "none";
-          empty.style.display = "block";
-        };
-
-        image.onload = function() {
-          image.style.display = "block";
-          empty.style.display = "none";
-        };
-
-        image.src = result.data.publicUrl;
-
-      } else {
-
-        image.style.display = "none";
-        empty.style.display = "block";
-      }
-
-      if (ad.target_url) {
-
-        link.href = ad.target_url;
-        link.style.pointerEvents = "auto";
-
-      } else {
-
-        link.removeAttribute("href");
-        link.style.pointerEvents = "none";
-      }
-
-    }
-
-    currentAd = 0;
-
-    showAd(currentAd);
-
-    if (adTimer) {
-      clearInterval(adTimer);
-    }
-
-    if (ads.length > 1) {
-
-      adTimer = setInterval(function() {
-
-        currentAd = (currentAd + 1) % ads.length;
-
-        showAd(currentAd);
-
-      }, 5000);
-
-    }
-
-  } catch (error) {
-
-    console.error("Advertisement loading failed:", error);
-
-  }
-
+function showApp(){
+  document.getElementById("authSection").style.display = "none";
+  document.getElementById("homepage").style.display = "block";
+  document.getElementById("details").style.display = "none";
+  loadClasses();
+  loadAds();
 }
 
+function continueAsGuest(){ showApp(); }
 
-// ======================================
-// SEARCH CLASSES / SUBJECTS / CHAPTERS
-// ======================================
+function showSignup(){
+  document.getElementById("studentLoginBox").style.display = "none";
+  document.getElementById("signupBox").style.display = "block";
+  document.getElementById("authMessage").textContent = "";
+}
+function showLogin(){
+  document.getElementById("signupBox").style.display = "none";
+  document.getElementById("studentLoginBox").style.display = "block";
+  document.getElementById("authMessage").textContent = "";
+}
 
-async function searchStudyContent() {
+async function googleLogin(){
+  const msg = document.getElementById("authMessage");
+  msg.textContent = "Connecting to Google...";
+  const {error} = await db.auth.signInWithOAuth({
+    provider: "google",
+    options: {redirectTo: "https://d7332553191-a11y.github.io/study-with-devid/"}
+  });
+  if(error) msg.textContent = "Google login error: " + error.message;
+}
 
+async function studentSignup(){
+  const name = document.getElementById("studentName").value.trim();
+  const email = document.getElementById("studentEmail").value.trim();
+  const password = document.getElementById("studentPassword").value;
+  const msg = document.getElementById("authMessage");
+
+  if(!name || !email || !password){ msg.textContent = "Please fill all fields."; return; }
+  if(password.length < 6){ msg.textContent = "Password must be at least 6 characters."; return; }
+
+  msg.textContent = "Creating account...";
+  const {error} = await db.auth.signUp({
+    email, password,
+    options: {
+      data: {full_name: name},
+      emailRedirectTo: "https://d7332553191-a11y.github.io/study-with-devid/"
+    }
+  });
+  if(error){ msg.textContent = "Signup error: " + error.message; return; }
+  msg.textContent = "Signup request successful. Check your email for verification, then log in.";
+}
+
+async function studentLogin(){
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value;
+  const msg = document.getElementById("authMessage");
+  if(!email || !password){ msg.textContent = "Enter email and password."; return; }
+
+  msg.textContent = "Logging in...";
+  const {data,error} = await db.auth.signInWithPassword({email,password});
+  if(error){ msg.textContent = "Login error: " + error.message; return; }
+  msg.textContent = "Login successful!";
+  await showStudentWebsite(data.session);
+}
+
+async function showStudentWebsite(session){
+  document.getElementById("authSection").style.display = "none";
+  document.getElementById("homepage").style.display = "block";
+  document.getElementById("details").style.display = "none";
+
+  const {data,error} = await db.from("profiles")
+    .select("student_id,full_name")
+    .eq("id",session.user.id)
+    .maybeSingle();
+
+  if(error) console.warn("Profile lookup:", error.message);
+  if(data && data.full_name){
+    alert("Welcome " + data.full_name + (data.student_id ? "! Your Student ID: " + data.student_id : "!"));
+  }
+  await loadClasses();
+  await loadAds();
+}
+
+async function checkStudentLogin(){
+  const auth = document.getElementById("authSection");
+  const homepage = document.getElementById("homepage");
+  const details = document.getElementById("details");
+
+  const {data,error} = await db.auth.getSession();
+  if(error) console.warn("Session check:", error.message);
+
+  if(data && data.session){
+    const {data:admin,error:adminError} = await db.from("admin_users")
+      .select("user_id")
+      .eq("user_id",data.session.user.id)
+      .maybeSingle();
+
+    if(adminError) console.warn("Admin check:", adminError.message);
+    if(admin){
+      auth.style.display = "block";
+      homepage.style.display = "none";
+      details.style.display = "none";
+      document.getElementById("authMessage").textContent =
+        "Admin account detected. Please use the Admin Login page.";
+      return;
+    }
+    await showStudentWebsite(data.session);
+  }else{
+    auth.style.display = "block";
+    homepage.style.display = "none";
+    details.style.display = "none";
+  }
+}
+
+async function studentLogout(){
+  const {error} = await db.auth.signOut();
+  if(error){ alert(error.message); return; }
+  location.reload();
+}
+
+async function loadClasses(){
+  const cards = document.getElementById("classCards");
+  cards.innerHTML = '<p class="status-message">Loading classes...</p>';
+
+  const {data,error} = await db.from("classes")
+    .select("id,class_number,title")
+    .order("class_number");
+
+  if(error){
+    cards.innerHTML = '<p class="status-message">Unable to load classes: ' +
+      escapeHTML(error.message) + '</p>';
+    console.error("Load classes:",error);
+    return;
+  }
+  cards.innerHTML = "";
+  if(!data || data.length === 0){
+    cards.innerHTML = '<p class="status-message">No classes added yet.</p>';
+    return;
+  }
+
+  data.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
+    const heading = document.createElement("h3");
+    heading.textContent = item.title || ("Class " + item.class_number);
+    const description = document.createElement("p");
+    description.textContent = "CBSE Study Materials";
+    const button = document.createElement("button");
+    button.className = "btn";
+    button.type = "button";
+    button.textContent = "Explore →";
+    button.onclick = () => openClass(item);
+    card.append(heading,description,button);
+    cards.appendChild(card);
+  });
+}
+
+async function openClass(classItem){
+  currentClass = classItem;
+  currentStream = null;
+  currentSubject = null;
+  allCurrentSubjects = [];
+
+  document.getElementById("homepage").style.display = "none";
+  const details = document.getElementById("details");
+  details.style.display = "block";
+  details.scrollIntoView({behavior:"smooth"});
+
+  document.getElementById("detailTitle").textContent =
+    classItem.title || ("Class " + classItem.class_number);
+  document.getElementById("detailDescription").textContent = "Loading subjects...";
+  showMessage("Loading subjects...");
+
+  const {data:subjects,error} = await db.from("subjects")
+    .select("id,class_id,name,stream,sort_order")
+    .eq("class_id",classItem.id)
+    .order("sort_order");
+
+  if(error){ showMessage("Unable to load subjects: " + error.message); console.error(error); return; }
+  allCurrentSubjects = subjects || [];
+
+  if(Number(classItem.class_number) === 9 || Number(classItem.class_number) === 10){
+    renderSubjects(allCurrentSubjects,false);
+  }else{
+    renderStreams(allCurrentSubjects);
+  }
+}
+
+function renderSubjects(subjects,streamBack){
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
+
+  const back = document.createElement("button");
+  back.className = "back";
+  back.type = "button";
+
+  if(streamBack){
+    back.textContent = "← Back to Streams";
+    back.onclick = () => renderStreams(allCurrentSubjects);
+  }else{
+    back.textContent = "← Back to Home";
+    back.onclick = home;
+  }
+  list.appendChild(back);
+
+  if(!subjects || subjects.length === 0){
+    const msg = document.createElement("p");
+    msg.className = "status-message";
+    msg.textContent = "No subjects added yet.";
+    list.appendChild(msg);
+    return;
+  }
+
+  subjects.forEach(subject => {
+    const div = document.createElement("div");
+    div.className = "subject-item";
+    div.textContent = subject.name + " →";
+    div.onclick = () => openSubject(subject);
+    list.appendChild(div);
+  });
+}
+
+function renderStreams(subjects){
+  allCurrentSubjects = subjects || [];
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
+
+  const back = document.createElement("button");
+  back.className = "back";
+  back.type = "button";
+  back.textContent = "← Back to Home";
+  back.onclick = home;
+  list.appendChild(back);
+
+  const streams = [...new Set(allCurrentSubjects.map(s =>
+    (s.stream || "Common Subjects").trim()
+  ))];
+
+  if(streams.length === 0){
+    const msg = document.createElement("p");
+    msg.className = "status-message";
+    msg.textContent = "No streams added yet.";
+    list.appendChild(msg);
+    return;
+  }
+
+  streams.forEach(stream => {
+    const div = document.createElement("div");
+    div.className = "subject-item";
+    const strong = document.createElement("strong");
+    strong.textContent = stream;
+    const small = document.createElement("small");
+    small.textContent = "View Subjects →";
+    div.append(strong,document.createElement("br"),small);
+    div.onclick = () => openStreamSubjects(stream);
+    list.appendChild(div);
+  });
+}
+
+function openStreamSubjects(stream){
+  currentStream = stream;
+  const filtered = allCurrentSubjects.filter(s =>
+    (s.stream || "Common Subjects").trim() === stream
+  );
+  document.getElementById("detailTitle").textContent =
+    "Class " + currentClass.class_number + " – " + stream;
+  document.getElementById("detailDescription").textContent = "Choose a subject.";
+  renderSubjects(filtered,true);
+}
+
+async function openSubject(subject){
+  currentSubject = subject;
+  document.getElementById("detailTitle").textContent =
+    "Class " + currentClass.class_number + " – " + subject.name;
+  document.getElementById("detailDescription").textContent = "Loading chapters...";
+  showMessage("Loading chapters...");
+
+  const {data:chapters,error} = await db.from("chapters")
+    .select("id,title,sort_order")
+    .eq("subject_id",subject.id)
+    .order("sort_order");
+
+  if(error){ showMessage("Unable to load chapters: " + error.message); console.error(error); return; }
+  renderChapters(chapters || []);
+}
+
+function renderChapters(chapters){
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
+
+  const back = document.createElement("button");
+  back.className = "back";
+  back.type = "button";
+  back.textContent = "← Back to Subjects";
+  back.onclick = backToSubjects;
+  list.appendChild(back);
+
+  document.getElementById("detailDescription").textContent =
+    "Choose a chapter to view its study materials.";
+
+  if(chapters.length === 0){
+    const msg = document.createElement("p");
+    msg.className = "status-message";
+    msg.textContent = "No chapters added yet.";
+    list.appendChild(msg);
+    return;
+  }
+
+  chapters.forEach(chapter => {
+    const div = document.createElement("div");
+    div.className = "subject-item";
+    div.textContent = chapter.title + " →";
+    div.onclick = () => openChapter(chapter);
+    list.appendChild(div);
+  });
+}
+
+async function backToSubjects(){
+  if(!currentClass) return;
+  document.getElementById("detailDescription").textContent = "Loading subjects...";
+  showMessage("Loading subjects...");
+
+  const {data,error} = await db.from("subjects")
+    .select("id,class_id,name,stream,sort_order")
+    .eq("class_id",currentClass.id)
+    .order("sort_order");
+
+  if(error){ showMessage("Unable to load subjects: " + error.message); return; }
+  allCurrentSubjects = data || [];
+
+  if(Number(currentClass.class_number) === 9 || Number(currentClass.class_number) === 10){
+    document.getElementById("detailTitle").textContent =
+      currentClass.title || ("Class " + currentClass.class_number);
+    document.getElementById("detailDescription").textContent = "Choose a subject.";
+    renderSubjects(allCurrentSubjects,false);
+  }else{
+    document.getElementById("detailTitle").textContent =
+      "Class " + currentClass.class_number + " – " + (currentStream || "Streams");
+    if(currentStream){
+      const filtered = allCurrentSubjects.filter(s =>
+        (s.stream || "Common Subjects").trim() === currentStream
+      );
+      document.getElementById("detailDescription").textContent = "Choose a subject.";
+      renderSubjects(filtered,true);
+    }else{
+      document.getElementById("detailDescription").textContent = "Choose a stream.";
+      renderStreams(allCurrentSubjects);
+    }
+  }
+}
+
+async function openChapter(chapter){
+  document.getElementById("detailTitle").textContent = chapter.title;
+  document.getElementById("detailDescription").textContent = "Loading study materials...";
+  showMessage("Loading materials...");
+
+  const {data:materials,error} = await db.from("materials")
+    .select("id,title,description,material_type,file_path")
+    .eq("chapter_id",chapter.id)
+    .eq("is_published",true)
+    .order("created_at");
+
+  if(error){ showMessage("Unable to load materials: " + error.message); console.error(error); return; }
+
+  const list = document.getElementById("subjectList");
+  list.innerHTML = "";
+  const back = document.createElement("button");
+  back.className = "back";
+  back.type = "button";
+  back.textContent = "← Back to Chapters";
+  back.onclick = () => openSubject(currentSubject);
+  list.appendChild(back);
+
+  document.getElementById("detailDescription").textContent = "Available study materials.";
+
+  if(!materials || materials.length === 0){
+    const msg = document.createElement("p");
+    msg.className = "status-message";
+    msg.textContent = "No published materials in this chapter yet.";
+    list.appendChild(msg);
+    return;
+  }
+
+  materials.forEach(material => {
+    const card = document.createElement("div");
+    card.className = "subject-item material-card";
+    const heading = document.createElement("h3");
+    heading.textContent = material.title || "Study Material";
+    card.appendChild(heading);
+
+    if(material.description){
+      const desc = document.createElement("p");
+      desc.textContent = material.description;
+      card.appendChild(desc);
+    }
+
+    const {data:urlData} = db.storage.from("study-content").getPublicUrl(material.file_path);
+    const url = urlData.publicUrl;
+    const type = (material.material_type || "").toLowerCase();
+
+    if(type.includes("video")){
+      const video = document.createElement("video");
+      video.src = url;
+      video.controls = true;
+      video.preload = "metadata";
+      card.appendChild(video);
+    }
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Open / Download →";
+    card.appendChild(link);
+    list.appendChild(card);
+  });
+}
+
+function home(){
+  document.getElementById("homepage").style.display = "block";
+  document.getElementById("details").style.display = "none";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[ch]));
+}
+
+async function searchStudyContent(){
   const input = document.getElementById("studySearchInput");
-
   const results = document.getElementById("studySearchResults");
-
   const query = input.value.trim().toLowerCase();
-
   results.innerHTML = "";
+  if(!query) return;
 
-  if (!query) return;
-
-  results.innerHTML = "<p>Searching...</p>";
-
-  const [
-    classesRes,
-    subjectsRes,
-    chaptersRes,
-    materialsRes
-  ] = await Promise.all([
-
-    db.from("classes")
-      .select("id,class_number,title"),
-
-    db.from("subjects")
-      .select("id,class_id,name,stream"),
-
-    db.from("chapters")
-      .select("id,subject_id,title"),
-
-    db.from("materials")
-      .select("id,title,material_type,file_path,chapter_id")
-      .eq("is_published", true)
-
+  results.textContent = "Searching...";
+  const [classesRes,subjectsRes,chaptersRes,materialsRes] = await Promise.all([
+    db.from("classes").select("id,class_number,title"),
+    db.from("subjects").select("id,class_id,name,stream"),
+    db.from("chapters").select("id,subject_id,title"),
+    db.from("materials").select("id,title,material_type,file_path,chapter_id").eq("is_published",true)
   ]);
 
-  if (
-    classesRes.error ||
-    subjectsRes.error ||
-    chaptersRes.error ||
-    materialsRes.error
-  ) {
-
-    results.innerHTML =
-      "<p>Search failed. Please try again.</p>";
-
-    console.error(
-      classesRes.error ||
-      subjectsRes.error ||
-      chaptersRes.error ||
-      materialsRes.error
-    );
-
+  const failed = classesRes.error || subjectsRes.error || chaptersRes.error || materialsRes.error;
+  if(failed){
+    results.textContent = "Search failed: " + failed.message;
+    console.error("Search error:",failed);
     return;
   }
 
@@ -987,142 +675,116 @@ async function searchStudyContent() {
   const subjects = subjectsRes.data || [];
   const chapters = chaptersRes.data || [];
   const materials = materialsRes.data || [];
-
+  results.innerHTML = "";
   let found = 0;
 
-  results.innerHTML = "";
-
   chapters.forEach(chapter => {
+    const subject = subjects.find(s => s.id === chapter.subject_id);
+    if(!subject) return;
+    const classItem = classes.find(c => c.id === subject.class_id);
+    if(!classItem) return;
 
-    const subject = subjects.find(
-      s => s.id === chapter.subject_id
-    );
+    const className = classItem.title || ("Class " + classItem.class_number);
+    const searchable = (className + " Class " + classItem.class_number + " " +
+      subject.name + " " + (subject.stream || "") + " " + chapter.title).toLowerCase();
+    if(!searchable.includes(query)) return;
 
-    if (!subject) return;
-
-    const classItem = classes.find(
-      c => c.id === subject.class_id
-    );
-
-    if (!classItem) return;
-
-    const className =
-      classItem.title || ("Class " + classItem.class_number);
-
-    const searchableText = (
-      className + " " +
-      "Class " + classItem.class_number + " " +
-      subject.name + " " +
-      (subject.stream || "") + " " +
-      chapter.title
-    ).toLowerCase();
-
-    if (!searchableText.includes(query)) return;
-
-    const chapterMaterials = materials.filter(
-      m => m.chapter_id === chapter.id
-    );
-
-    if (chapterMaterials.length === 0) return;
-
+    const chapterMaterials = materials.filter(m => m.chapter_id === chapter.id);
+    if(chapterMaterials.length === 0) return;
     found++;
 
     const card = document.createElement("div");
-
-    card.style.cssText =
-      "background:white;padding:13px;margin:10px 0;" +
-      "border:1px solid #d5deed;border-radius:10px;";
-
+    card.className = "subject-item material-card";
     const heading = document.createElement("h3");
-
     heading.textContent = chapter.title;
-
-    card.appendChild(heading);
-
     const info = document.createElement("p");
-
     info.textContent = className + " • " + subject.name;
-
-    card.appendChild(info);
+    card.append(heading,info);
 
     chapterMaterials.forEach(material => {
-
-      const url = db.storage
-        .from("study-content")
-        .getPublicUrl(material.file_path).data.publicUrl;
-
-      const link = document.createElement("a");
-
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noopener";
-
-      link.textContent = "📄 " + material.title + " →";
-
-      link.style.cssText =
-        "display:block;padding:9px;color:#2563eb;";
-
-      card.appendChild(link);
-
+      const url = db.storage.from("study-content").getPublicUrl(material.file_path).data.publicUrl;
+      const a = document.createElement("a");
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = "📄 " + material.title + " →";
+      a.style.display = "block";
+      card.appendChild(a);
     });
-
     results.appendChild(card);
-
   });
 
-  if (found === 0) {
-
-    results.innerHTML =
-      "<p>No matching published study materials found.</p>";
-
-  }
-
+  if(found === 0) results.textContent = "No matching published study materials found.";
 }
 
+async function loadAds(){
+  const image = document.getElementById("cbseAdImage");
+  const empty = document.getElementById("cbseAdEmpty");
+  const ticker = document.getElementById("cbseAdTicker");
+  const link = document.getElementById("cbseAdLink");
 
-// ======================================
-// LOAD CLASSES
-// ======================================
+  const {data:ads,error} = await db.from("advertisements")
+    .select("title,notification,image_path,target_url")
+    .eq("is_active",true)
+    .order("sort_order");
 
-async function loadClasses() {
-
-  const cards = document.getElementById("classCards");
-
-  cards.innerHTML =
-    '<p class="status-message">Loading classes...</p>';
-
-  const { data, error } = await db
-    .from("classes")
-    .select("id,class_number,title")
-    .order("class_number");
-
-  if (error) {
-
-    cards.innerHTML =
-      '<p class="status-message">Unable to load classes. Please try again later.</p>';
-
-    console.error(error);
-
-    return;
+  if(error){
+    console.warn("CBSE advertisement loading:",error.message);
+    return; // Keep the default CBSE LIVE placeholder visible.
   }
+  if(!ads || ads.length === 0) return;
 
-  cards.innerHTML = "";
-
-  if (!data || data.length === 0) {
-
-    cards.innerHTML =
-      '<p class="status-message">No classes added yet.</p>';
-
-    return;
+  let current = 0;
+  function showAd(index){
+    const ad = ads[index];
+    if(ad.image_path){
+      const publicUrl = db.storage.from("ad-images").getPublicUrl(ad.image_path).data.publicUrl;
+      image.src = publicUrl;
+      image.style.display = "block";
+      empty.style.display = "none";
+    }else{
+      image.style.display = "none";
+      empty.style.display = "block";
+    }
+    ticker.textContent = ad.notification || ad.title || "CBSE LIVE - Latest Updates";
+    if(ad.target_url){
+      link.href = ad.target_url;
+      link.style.cursor = "pointer";
+    }else{
+      link.removeAttribute("href");
+      link.style.cursor = "default";
+    }
   }
+  showAd(0);
+  if(ads.length > 1){
+    setInterval(() => {
+      current = (current + 1) % ads.length;
+      showAd(current);
+    },5000);
+  }
+}
 
-  data.forEach(item => {
+const photos = [
+  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000",
+  "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000",
+  "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000",
+  "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1000"
+];
+let photoIndex = 0;
+setInterval(() => {
+  const heroPhoto = document.getElementById("heroPhoto");
+  if(heroPhoto && document.getElementById("homepage").style.display !== "none"){
+    photoIndex = (photoIndex + 1) % photos.length;
+    heroPhoto.src = photos[photoIndex];
+  }
+},4000);
 
-    const card = document.createElement("div");
-
-    card.className = "card";
-
-    const heading = document.createElement("h3");
-
-    heading.textContent =
-      item.title || ("Class 
+/* Start the site only after the Supabase client has loaded. */
+checkStudentLogin().catch(error => {
+  console.error("Website startup error:",error);
+  document.getElementById("authMessage").textContent =
+    "Website could not connect to the database. Please refresh and try again.";
+});
+</script>
+</body>
+</html>
