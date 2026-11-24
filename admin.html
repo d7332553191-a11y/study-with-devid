@@ -52,7 +52,31 @@ label{display:block;margin:10px 0}
 <h3>Welcome, Admin</h3>
 <button class="secondary" onclick="logout()">Logout</button>
 </div>
+<div class="card">
+<h3>📊 Website Statistics</h3>
 
+<div class="item">
+Total Page Views: <strong id="totalViews">Loading...</strong>
+</div>
+
+<div class="item">
+Today's Page Views: <strong id="todayViews">Loading...</strong>
+</div>
+
+<div class="item">
+Total Login Count: <strong id="totalLogins">Loading...</strong>
+</div>
+
+<div class="item">
+Today's Login Count: <strong id="todayLogins">Loading...</strong>
+</div>
+
+<button class="secondary" onclick="loadWebsiteStats()">
+Refresh Statistics
+</button>
+
+<p id="statsMsg"></p>
+</div>
 <div class="card">
 <h3>Manage Classes</h3>
 <input id="classNumber" type="number" placeholder="Class number (9, 10, 11...)">
